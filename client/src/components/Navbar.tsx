@@ -1,4 +1,4 @@
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Shield, Menu, X } from "lucide-react";
 import { useState } from "react";
@@ -7,24 +7,39 @@ import RequestDemoDialog from "@/components/RequestDemoDialog";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [location] = useLocation();
+
+  const navLinks = [
+    { href: "/solutions", label: "Solutions" },
+    { href: "/products", label: "Products" },
+    { href: "/industries", label: "Industries" },
+    { href: "/company", label: "Company" },
+  ];
 
   return (
     <nav className="fixed top-0 w-full z-50 border-b border-white/10 bg-background/80 backdrop-blur-md">
       <div className="container mx-auto px-6 h-20 flex items-center justify-between">
         <Link href="/">
-          <a className="flex items-center gap-2 cursor-pointer">
-            <Shield className="h-8 w-8 text-primary" />
+          <a className="flex items-center gap-2 cursor-pointer group">
+            <Shield className="h-8 w-8 text-primary group-hover:text-white transition-colors" />
             <span className="text-2xl font-bold font-display tracking-tight">ID</span>
           </a>
         </Link>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
-          <a href="#solutions" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Solutions</a>
-          <a href="#industries" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Industries</a>
-          <a href="#company" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Company</a>
+          {navLinks.map((link) => (
+            <Link key={link.href} href={link.href}>
+              <a className={cn(
+                "text-sm font-medium transition-colors hover:text-primary",
+                location === link.href ? "text-primary" : "text-muted-foreground"
+              )}>
+                {link.label}
+              </a>
+            </Link>
+          ))}
           <RequestDemoDialog>
-            <Button variant="default" className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-6">
+            <Button variant="default" className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-6 shadow-[0_0_15px_rgba(245,156,0,0.4)] hover:shadow-[0_0_25px_rgba(245,156,0,0.6)] transition-all">
               Request Demo
             </Button>
           </RequestDemoDialog>
@@ -39,9 +54,19 @@ export default function Navbar() {
       {/* Mobile Nav */}
       {isOpen && (
         <div className="md:hidden absolute top-20 left-0 w-full bg-background border-b border-white/10 p-6 flex flex-col gap-4 animate-in slide-in-from-top-5">
-          <a href="#solutions" className="text-lg font-medium" onClick={() => setIsOpen(false)}>Solutions</a>
-          <a href="#industries" className="text-lg font-medium" onClick={() => setIsOpen(false)}>Industries</a>
-          <a href="#company" className="text-lg font-medium" onClick={() => setIsOpen(false)}>Company</a>
+          {navLinks.map((link) => (
+            <Link key={link.href} href={link.href}>
+              <a 
+                className={cn(
+                  "text-lg font-medium",
+                  location === link.href ? "text-primary" : "text-foreground"
+                )} 
+                onClick={() => setIsOpen(false)}
+              >
+                {link.label}
+              </a>
+            </Link>
+          ))}
           <RequestDemoDialog>
             <Button className="w-full mt-4">Request Demo</Button>
           </RequestDemoDialog>

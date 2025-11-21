@@ -10,24 +10,18 @@ import Footer from "@/components/Footer";
 import ParticleBackground from "@/components/ParticleBackground";
 import SecurityHUD from "@/components/SecurityHUD";
 import CustomCursor from "@/components/CustomCursor";
+import Layout from "@/components/Layout";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/30 relative cursor-none">
-      <CustomCursor />
-      <SecurityHUD />
-      <ParticleBackground />
-      <Navbar />
-      <main className="relative z-10">
-        <Hero />
-        <Stats />
-        <Features />
-        <Integrations />
-        <Industries />
-        <Testimonials />
-        <CTA />
-      </main>
-      <Footer />
-    </div>
+    <Layout>
+      <Hero />
+      <Stats />
+      <Features />
+      <Integrations />
+      <Industries />
+      <Testimonials />
+      <CTA />
+    </Layout>
   );
 }
