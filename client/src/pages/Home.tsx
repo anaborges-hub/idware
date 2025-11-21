@@ -9,10 +9,12 @@ import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import ParticleBackground from "@/components/ParticleBackground";
 import SecurityHUD from "@/components/SecurityHUD";
+import CustomCursor from "@/components/CustomCursor";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/30 relative">
+    <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/30 relative cursor-none">
+      <CustomCursor />
       <SecurityHUD />
       <ParticleBackground />
       <Navbar />

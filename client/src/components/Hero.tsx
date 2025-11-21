@@ -5,6 +5,7 @@ import heroBg from "@assets/generated_images/abstract_digital_security_network_b
 import RequestDemoDialog from "@/components/RequestDemoDialog";
 import LiveMonitor from "@/components/LiveMonitor";
 import GlitchText from "@/components/GlitchText";
+import DecryptText from "@/components/DecryptText";
 
 export default function Hero() {
   return (
@@ -40,7 +41,7 @@ export default function Hero() {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
                 </span>
-                SYSTEM_ONLINE // V 4.0
+                <DecryptText text="SYSTEM_ONLINE // V 4.0" />
               </div>
               
               <h1 className="text-5xl md:text-7xl font-bold font-display leading-tight mb-6 tracking-tight">
@@ -50,9 +51,11 @@ export default function Hero() {
                 </span>
               </h1>
               
-              <p className="text-xl text-muted-foreground mb-8 leading-relaxed max-w-2xl border-l-2 border-primary/30 pl-6">
-                The global leader in Physical Identity and Access Management. 
-                We unify physical security, IT, and compliance to protect large-scale organizations.
+              <p className="text-xl text-muted-foreground mb-8 leading-relaxed max-w-2xl border-l-2 border-primary/30 pl-6 font-mono">
+                <DecryptText 
+                  text="The global leader in Physical Identity and Access Management. We unify physical security, IT, and compliance to protect large-scale organizations." 
+                  speed={10}
+                />
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
