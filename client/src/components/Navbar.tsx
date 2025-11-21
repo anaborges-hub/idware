@@ -20,22 +20,22 @@ export default function Navbar() {
     <nav className="fixed top-0 w-full z-50 border-b border-white/10 bg-background/80 backdrop-blur-md">
       <div className="container mx-auto px-6 h-20 flex items-center justify-between">
         <Link href="/">
-          <a className="flex items-center gap-2 cursor-pointer group">
+          <span className="flex items-center gap-2 cursor-pointer group">
             <Shield className="h-8 w-8 text-primary group-hover:text-white transition-colors" />
             <span className="text-2xl font-bold font-display tracking-tight">ID</span>
-          </a>
+          </span>
         </Link>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <Link key={link.href} href={link.href}>
-              <a className={cn(
-                "text-sm font-medium transition-colors hover:text-primary",
+              <span className={cn(
+                "text-sm font-medium transition-colors hover:text-primary cursor-pointer",
                 location === link.href ? "text-primary" : "text-muted-foreground"
               )}>
                 {link.label}
-              </a>
+              </span>
             </Link>
           ))}
           <RequestDemoDialog>
@@ -56,15 +56,15 @@ export default function Navbar() {
         <div className="md:hidden absolute top-20 left-0 w-full bg-background border-b border-white/10 p-6 flex flex-col gap-4 animate-in slide-in-from-top-5">
           {navLinks.map((link) => (
             <Link key={link.href} href={link.href}>
-              <a 
+              <span 
                 className={cn(
-                  "text-lg font-medium",
+                  "text-lg font-medium cursor-pointer",
                   location === link.href ? "text-primary" : "text-foreground"
                 )} 
                 onClick={() => setIsOpen(false)}
               >
                 {link.label}
-              </a>
+              </span>
             </Link>
           ))}
           <RequestDemoDialog>
