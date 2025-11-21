@@ -48,15 +48,15 @@
   --popover: 221 50% 13%;
   --popover-foreground: 210 40% 98%;
   
-  /* Primary - The Deep Blue #133070 */
-  /* HSL: 221 71% 26% */
-  --primary: 221 71% 26%;
-  --primary-foreground: 210 40% 98%; /* White text on Blue button */
-  
-  /* Secondary - The Amber/Orange #f59c00 */
+  /* Primary - The Orange #f59c00 */
   /* HSL: 38 100% 48% */
-  --secondary: 38 100% 48%;
-  --secondary-foreground: 221 71% 20%; /* Dark Blue text on Orange button */
+  --primary: 38 100% 48%;
+  --primary-foreground: 221 71% 20%; /* Dark Blue text on Orange button */
+  
+  /* Secondary - The Corporate Blue #133070 */
+  /* HSL: 221 71% 26% */
+  --secondary: 221 71% 26%;
+  --secondary-foreground: 210 40% 98%; /* White text on Blue button */
   
   --muted: 221 30% 20%;
   --muted-foreground: 215 20.2% 75%;

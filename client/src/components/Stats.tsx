@@ -15,7 +15,7 @@ export default function Stats() {
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
               <div className="flex justify-center mb-4">
-                <stat.icon className="h-8 w-8 text-secondary" />
+                <stat.icon className="h-8 w-8 text-primary/60" />
               </div>
               <div className="text-4xl md:text-5xl font-bold font-display mb-2 text-foreground">
                 {stat.value}
