@@ -35,33 +35,41 @@
 
 /* Dark Theme Default for Cyber/Security Vibe */
 :root {
-  --background: 222 47% 11%; /* Dark Blue #0f172a */
+  /* Base background - Very dark blue/slate, kept similar to before for readability */
+  --background: 222 47% 11%; 
   --foreground: 210 40% 98%;
   
-  --card: 222 47% 11%;
+  /* Cards - Using the Corporate Blue #133070 as a base, maybe slightly adjusted for depth or used as accent */
+  /* Let's use a darkened version of #133070 for cards to keep text readable but branded */
+  /* #133070 is 221 71% 26% */
+  --card: 221 50% 15%; /* Darker version of the corporate blue for cards */
   --card-foreground: 210 40% 98%;
   
-  --popover: 222 47% 11%;
+  --popover: 221 50% 13%;
   --popover-foreground: 210 40% 98%;
   
-  --primary: 199 89% 48%; /* Electric Blue #0ea5e9 */
-  --primary-foreground: 210 40% 98%;
+  /* Primary - The Orange #f59c00 */
+  /* HSL: 38 100% 48% */
+  --primary: 38 100% 48%;
+  --primary-foreground: 221 71% 20%; /* Dark Blue text on Orange button */
   
-  --secondary: 217 33% 17%; /* Darker Slate */
-  --secondary-foreground: 210 40% 98%;
+  /* Secondary - The Corporate Blue #133070 */
+  /* HSL: 221 71% 26% */
+  --secondary: 221 71% 26%;
+  --secondary-foreground: 210 40% 98%; /* White text on Blue button */
   
-  --muted: 217 33% 17%;
-  --muted-foreground: 215 20.2% 65.1%;
+  --muted: 221 30% 20%;
+  --muted-foreground: 215 20.2% 75%;
   
-  --accent: 199 89% 48%;
+  --accent: 221 71% 26%; /* Use Blue as accent on hover */
   --accent-foreground: 210 40% 98%;
   
   --destructive: 0 62.8% 30.6%;
   --destructive-foreground: 210 40% 98%;
   
-  --border: 217 33% 17%;
-  --input: 217 33% 17%;
-  --ring: 199 89% 48%;
+  --border: 221 50% 20%;
+  --input: 221 50% 20%;
+  --ring: 38 100% 48%; /* Orange ring */
   
   --radius: 0.5rem;
 }
