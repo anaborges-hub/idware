@@ -74,14 +74,70 @@
   --radius: 0.5rem;
 }
 
-/* Add some utility classes for the custom font if needed, 
-   though tailwind usually picks up --font-display if configured. 
-   Since we are using @theme inline, let's ensure it's available.
-*/
-
 @layer utilities {
   .font-display {
     font-family: var(--font-display);
+  }
+  
+  .bg-grid-pattern {
+    background-image: linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  
+  .animate-grid-flow {
+    animation: gridFlow 20s linear infinite;
+  }
+
+  @keyframes gridFlow {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(40px); }
+  }
+
+  .glitch {
+    position: relative;
+  }
+  
+  .glitch::before,
+  .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .glitch::before {
+    left: 2px;
+    text-shadow: -1px 0 #f59c00;
+    clip: rect(24px, 550px, 90px, 0);
+    animation: glitch-anim-2 3s infinite linear alternate-reverse;
+  }
+  
+  .glitch::after {
+    left: -2px;
+    text-shadow: -1px 0 #133070;
+    clip: rect(85px, 550px, 140px, 0);
+    animation: glitch-anim 2.5s infinite linear alternate-reverse;
+  }
+  
+  @keyframes glitch-anim {
+    0% { clip: rect(14px, 9999px, 121px, 0); }
+    20% { clip: rect(89px, 9999px, 95px, 0); }
+    40% { clip: rect(22px, 9999px, 10px, 0); }
+    60% { clip: rect(65px, 9999px, 85px, 0); }
+    80% { clip: rect(10px, 9999px, 115px, 0); }
+    100% { clip: rect(45px, 9999px, 60px, 0); }
+  }
+  
+  @keyframes glitch-anim-2 {
+    0% { clip: rect(65px, 9999px, 100px, 0); }
+    20% { clip: rect(10px, 9999px, 15px, 0); }
+    40% { clip: rect(95px, 9999px, 35px, 0); }
+    60% { clip: rect(5px, 9999px, 80px, 0); }
+    80% { clip: rect(45px, 9999px, 10px, 0); }
+    100% { clip: rect(25px, 9999px, 95px, 0); }
   }
 }
 
