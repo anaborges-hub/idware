@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import heroBg from "@assets/generated_images/abstract_digital_security_network_background.png";
+import RequestDemoDialog from "@/components/RequestDemoDialog";
 
 export default function Hero() {
   return (
@@ -41,11 +42,13 @@ export default function Hero() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <Button size="lg" className="text-base px-8 h-12 bg-primary hover:bg-primary/90">
-                Get Started <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-              <Button size="lg" variant="outline" className="text-base px-8 h-12 border-white/10 hover:bg-white/5">
-                View Solutions
+              <RequestDemoDialog>
+                <Button size="lg" className="text-base px-8 h-12 bg-primary hover:bg-primary/90 text-primary-foreground">
+                  Get Started <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </RequestDemoDialog>
+              <Button size="lg" variant="outline" className="text-base px-8 h-12 border-white/10 hover:bg-white/5" asChild>
+                <a href="#solutions">View Solutions</a>
               </Button>
             </div>
 

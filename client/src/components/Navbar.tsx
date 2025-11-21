@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Shield, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import RequestDemoDialog from "@/components/RequestDemoDialog";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,11 +21,13 @@ export default function Navbar() {
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
           <a href="#solutions" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Solutions</a>
-          <a href="#products" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Products</a>
+          <a href="#industries" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Industries</a>
           <a href="#company" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Company</a>
-          <Button variant="default" className="bg-primary hover:bg-primary/90 text-white font-medium px-6">
-            Request Demo
-          </Button>
+          <RequestDemoDialog>
+            <Button variant="default" className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-6">
+              Request Demo
+            </Button>
+          </RequestDemoDialog>
         </div>
 
         {/* Mobile Toggle */}
@@ -37,9 +40,11 @@ export default function Navbar() {
       {isOpen && (
         <div className="md:hidden absolute top-20 left-0 w-full bg-background border-b border-white/10 p-6 flex flex-col gap-4 animate-in slide-in-from-top-5">
           <a href="#solutions" className="text-lg font-medium" onClick={() => setIsOpen(false)}>Solutions</a>
-          <a href="#products" className="text-lg font-medium" onClick={() => setIsOpen(false)}>Products</a>
+          <a href="#industries" className="text-lg font-medium" onClick={() => setIsOpen(false)}>Industries</a>
           <a href="#company" className="text-lg font-medium" onClick={() => setIsOpen(false)}>Company</a>
-          <Button className="w-full mt-4">Request Demo</Button>
+          <RequestDemoDialog>
+            <Button className="w-full mt-4">Request Demo</Button>
+          </RequestDemoDialog>
         </div>
       )}
     </nav>

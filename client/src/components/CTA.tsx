@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import RequestDemoDialog from "@/components/RequestDemoDialog";
 
 export default function CTA() {
   return (
@@ -14,9 +15,11 @@ export default function CTA() {
           Join the world's leading organizations in securing their workforce and facilities with ID's intelligent platform.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" className="text-lg h-14 px-8 bg-foreground text-background hover:bg-foreground/90">
-            Talk to Sales
-          </Button>
+          <RequestDemoDialog>
+            <Button size="lg" className="text-lg h-14 px-8 bg-foreground text-background hover:bg-foreground/90">
+              Talk to Sales
+            </Button>
+          </RequestDemoDialog>
           <Button size="lg" variant="outline" className="text-lg h-14 px-8 border-white/10 hover:bg-white/5">
             Download Whitepaper
           </Button>
