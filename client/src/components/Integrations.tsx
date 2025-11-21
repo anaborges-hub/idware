@@ -29,8 +29,8 @@ export default function Integrations() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {systems.map((sys, i) => (
                 <div key={i} className="flex items-center gap-3">
-                  <div className="h-6 w-6 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                    <Check className="h-3 w-3 text-primary" />
+                  <div className="h-6 w-6 rounded-full bg-secondary/10 flex items-center justify-center shrink-0">
+                    <Check className="h-3 w-3 text-secondary" />
                   </div>
                   <span className="font-medium text-sm">{sys}</span>
                 </div>
@@ -46,7 +46,7 @@ export default function Integrations() {
           
           <div className="flex-1 w-full">
             <div className="relative rounded-xl border border-white/10 bg-card/50 p-8 overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent" />
               
               {/* Abstract visualization of the "Central Hub" */}
               <div className="relative z-10 grid grid-cols-3 gap-4 text-center">
@@ -59,9 +59,9 @@ export default function Integrations() {
                 
                 {/* Center: The ID Platform */}
                 <div className="flex items-center justify-center">
-                  <div className="h-24 w-24 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center relative animate-pulse">
-                    <div className="absolute inset-0 rounded-full border border-primary/20 animate-ping" />
-                    <span className="font-bold font-display text-2xl text-primary">ID</span>
+                  <div className="h-24 w-24 rounded-full bg-secondary/10 border border-secondary/30 flex items-center justify-center relative animate-pulse">
+                    <div className="absolute inset-0 rounded-full border border-secondary/20 animate-ping" />
+                    <span className="font-bold font-display text-2xl text-secondary">ID</span>
                   </div>
                 </div>
                 

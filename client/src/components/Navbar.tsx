@@ -12,7 +12,7 @@ export default function Navbar() {
       <div className="container mx-auto px-6 h-20 flex items-center justify-between">
         <Link href="/">
           <a className="flex items-center gap-2 cursor-pointer">
-            <Shield className="h-8 w-8 text-primary" />
+            <Shield className="h-8 w-8 text-secondary" />
             <span className="text-2xl font-bold font-display tracking-tight">ID</span>
           </a>
         </Link>

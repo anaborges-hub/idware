@@ -32,7 +32,7 @@ export default function Hero() {
             </div>
             
             <h1 className="text-5xl md:text-7xl font-bold font-display leading-tight mb-6 tracking-tight">
-              Secure Your World with <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-amber-200">Intelligent Identity</span>
+              Secure Your World with <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-amber-200">Intelligent Identity</span>
             </h1>
             
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed max-w-2xl">
