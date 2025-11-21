@@ -3,6 +3,8 @@ import Hero from "@/components/Hero";
 import Stats from "@/components/Stats";
 import Features from "@/components/Features";
 import Industries from "@/components/Industries";
+import Integrations from "@/components/Integrations";
+import Testimonials from "@/components/Testimonials";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 
@@ -14,7 +16,9 @@ export default function Home() {
         <Hero />
         <Stats />
         <Features />
+        <Integrations />
         <Industries />
+        <Testimonials />
         <CTA />
       </main>
       <Footer />
