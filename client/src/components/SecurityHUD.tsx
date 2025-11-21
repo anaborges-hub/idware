@@ -41,8 +41,8 @@ export default function SecurityHUD() {
         ))}
       </div>
 
-      {/* Scanning Line Effect - subtle */}
-      <div className="absolute left-0 w-full h-px bg-primary/10 shadow-[0_0_15px_rgba(245,156,0,0.2)] animate-scanline" />
+      {/* Scanning Line Effect - subtle - REMOVED for performance */}
+      {/* <div className="absolute left-0 w-full h-px bg-primary/10 shadow-[0_0_15px_rgba(245,156,0,0.2)] animate-scanline" /> */}
       
       {/* Vignette */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_50%,rgba(0,0,0,0.4)_100%)]" />
