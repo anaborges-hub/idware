@@ -2,15 +2,6 @@ import { useEffect, useState } from "react";
 import { Lock, ShieldCheck, Wifi } from "lucide-react";
 
 export default function SecurityHUD() {
-  const [scanLine, setScanLine] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setScanLine(prev => (prev + 1) % 100);
-    }, 50);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <div className="fixed inset-0 z-[100] pointer-events-none overflow-hidden">
       {/* Corner Brackets */}
@@ -51,10 +42,7 @@ export default function SecurityHUD() {
       </div>
 
       {/* Scanning Line Effect - subtle */}
-      <div 
-        className="absolute left-0 w-full h-px bg-primary/10 shadow-[0_0_15px_rgba(245,156,0,0.2)]"
-        style={{ top: `${scanLine}%`, transition: 'top 0.05s linear' }}
-      />
+      <div className="absolute left-0 w-full h-px bg-primary/10 shadow-[0_0_15px_rgba(245,156,0,0.2)] animate-scanline" />
       
       {/* Vignette */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_50%,rgba(0,0,0,0.4)_100%)]" />

@@ -17,8 +17,8 @@ export default function ParticleBackground() {
     canvas.height = height;
 
     const particles: Particle[] = [];
-    const particleCount = Math.min(100, width / 10); // Responsive count
-    const connectionDistance = 150;
+    const particleCount = Math.min(50, width / 20); // Optimized count for performance
+    const connectionDistance = 120;
 
     class Particle {
       x: number;

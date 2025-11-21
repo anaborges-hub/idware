@@ -6,11 +6,22 @@ export default function CustomCursor() {
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
   
+  // Only render on devices with fine pointers (mouse), disable on touch/mobile
+  const [isValidDevice, setIsValidDevice] = useState(false);
+
+  useEffect(() => {
+    if (window.matchMedia("(pointer: fine)").matches) {
+      setIsValidDevice(true);
+    }
+  }, []);
+  
   const springConfig = { damping: 25, stiffness: 700 };
   const cursorXSpring = useSpring(cursorX, springConfig);
   const cursorYSpring = useSpring(cursorY, springConfig);
 
   useEffect(() => {
+    if (!isValidDevice) return;
+
     const moveCursor = (e: MouseEvent) => {
       cursorX.set(e.clientX - 16);
       cursorY.set(e.clientY - 16);
@@ -31,7 +42,9 @@ export default function CustomCursor() {
       window.removeEventListener("mousemove", moveCursor);
       window.removeEventListener("mouseover", handleMouseOver);
     };
-  }, [cursorX, cursorY]);
+  }, [cursorX, cursorY, isValidDevice]);
+
+  if (!isValidDevice) return null;
 
   return (
     <>

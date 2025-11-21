@@ -139,6 +139,15 @@
     80% { clip: rect(45px, 9999px, 10px, 0); }
     100% { clip: rect(25px, 9999px, 95px, 0); }
   }
+
+  @keyframes scanline {
+    0% { top: 0%; }
+    100% { top: 100%; }
+  }
+  
+  .animate-scanline {
+    animation: scanline 4s linear infinite;
+  }
 }
 
 @layer base {
