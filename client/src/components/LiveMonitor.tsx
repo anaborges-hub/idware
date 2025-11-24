@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
-import { Shield, UserCheck, FileCheck, CreditCard, RefreshCw, Printer, MapPin, Users, CheckCircle2 } from "lucide-react";
+import { Shield, UserCheck, FileCheck, CreditCard, RefreshCw, Printer, MapPin, Users, CheckCircle2, Activity } from "lucide-react";
 import smartCard from "@assets/generated_images/smart_card_visualization.png";
 import accessMap from "@assets/generated_images/access_control_map.png";
 
