@@ -4,7 +4,7 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import RequestDemoDialog from "@/components/RequestDemoDialog";
-import idWareLogo from "@assets/generated_images/id-ware_white_logo.png";
+import idWareLogo from "@assets/ID-ware Logo (solo) weiss_1763985113528.png";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,7 +25,7 @@ export default function Navbar() {
             <img 
               src={idWareLogo} 
               alt="ID-ware" 
-              className="h-10 w-auto object-contain mix-blend-screen opacity-90 group-hover:opacity-100 transition-opacity" 
+              className="h-10 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity" 
             />
           </span>
         </Link>
