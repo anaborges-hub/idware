@@ -1,9 +1,10 @@
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Shield, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import RequestDemoDialog from "@/components/RequestDemoDialog";
+import idWareLogo from "@assets/generated_images/id-ware_white_logo.png";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,8 +22,11 @@ export default function Navbar() {
       <div className="container mx-auto px-6 h-20 flex items-center justify-between">
         <Link href="/">
           <span className="flex items-center gap-2 cursor-pointer group">
-            <Shield className="h-8 w-8 text-primary group-hover:text-white transition-colors" />
-            <span className="text-2xl font-bold font-display tracking-tight">ID</span>
+            <img 
+              src={idWareLogo} 
+              alt="ID-ware" 
+              className="h-10 w-auto object-contain mix-blend-screen opacity-90 group-hover:opacity-100 transition-opacity" 
+            />
           </span>
         </Link>
 
