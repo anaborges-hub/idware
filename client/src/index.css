@@ -139,6 +139,19 @@
     80% { clip: rect(45px, 9999px, 10px, 0); }
     100% { clip: rect(25px, 9999px, 95px, 0); }
   }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+  
+  .animate-marquee:hover {
+    animation-play-state: paused;
+  }
 }
 
 @layer base {

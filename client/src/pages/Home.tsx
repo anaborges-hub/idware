@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import CustomerSlider from "@/components/CustomerSlider";
 import Stats from "@/components/Stats";
 import Features from "@/components/Features";
 import Industries from "@/components/Industries";
@@ -16,6 +17,7 @@ export default function Home() {
   return (
     <Layout>
       <Hero />
+      <CustomerSlider />
       <Stats />
       <Features />
       <Integrations />
