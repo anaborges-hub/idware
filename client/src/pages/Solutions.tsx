@@ -1,9 +1,9 @@
 import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { CheckCircle2, Server, Shield, Users, Lock } from "lucide-react";
+import { CheckCircle2, Server, Shield, Users, Lock, CreditCard } from "lucide-react";
 import GlitchText from "@/components/GlitchText";
-import protectionImg from "@assets/generated_images/abstract_data_flow_protecting_a_building.png";
+import solutionsHero from "@assets/generated_images/physical_security_solutions_hero.png";
 
 export default function Solutions() {
   const solutions = [
@@ -26,10 +26,10 @@ export default function Solutions() {
       features: ["Unified Command Center", "Incident Workflow", "Geo-spatial Mapping"]
     },
     {
-      icon: Lock,
-      title: "Insider Threat Prevention",
-      description: "Detect anomalous behavior and potential threats from within your organization using AI-driven analytics.",
-      features: ["Behavioral Analytics", "Risk Scoring", "Real-time Alerts"]
+      icon: CreditCard,
+      title: "Smart Card Lifecycle Management",
+      description: "End-to-end management of physical credentials, from issuance to revocation, ensuring secure access at all times.",
+      features: ["Automated Provisioning", "Certificate Management", "Instant Revocation"]
     }
   ];
 
@@ -53,7 +53,7 @@ export default function Solutions() {
         {/* Hero Image */}
         <div className="relative w-full h-[400px] rounded-lg overflow-hidden mb-24 border border-primary/30">
           <div className="absolute inset-0 bg-primary/10 z-10" />
-          <img src={protectionImg} alt="Security Shield" className="w-full h-full object-cover opacity-60" />
+          <img src={solutionsHero} alt="Physical Security Command Center" className="w-full h-full object-cover opacity-80" />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-20" />
         </div>
 
