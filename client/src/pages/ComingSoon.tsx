@@ -26,15 +26,15 @@ export default function ComingSoon() {
 
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-yellow-500/10 border border-yellow-500/30 text-yellow-500 font-mono text-sm mb-6">
             <HardHat className="w-4 h-4" />
-            <span>WORK_IN_PROGRESS</span>
+            <span>AUTHORIZED_ONLY</span>
           </div>
 
           <h1 className="text-4xl md:text-6xl font-bold font-display mb-6">
-            Erhhh <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-amber-200">Error 404</span>
+            Access <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-amber-200">Restricted</span> // Development Zone
           </h1>
 
           <p className="text-xl text-muted-foreground mb-12 max-w-lg mx-auto">
-            Not found. This is currently under construction.
+            This module is currently being architected by our engineers. Authorized personnel only.
           </p>
 
           <div className="grid grid-cols-3 gap-4 max-w-md mx-auto font-mono text-xs text-primary/70">
