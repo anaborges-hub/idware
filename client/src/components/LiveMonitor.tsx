@@ -1,6 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
-import { Shield, UserCheck, FileCheck, CreditCard, RefreshCw, Printer, MapPin, Users, CheckCircle2, Activity } from "lucide-react";
+import { Shield, UserCheck, FileCheck, CreditCard, RefreshCw, Printer, MapPin, Users, Activity } from "lucide-react";
 import smartCard from "@assets/generated_images/smart_card_visualization.png";
 import accessMap from "@assets/generated_images/access_control_map.png";
 
@@ -26,15 +25,8 @@ const EVENTS = [
 
 const USERS = ["A. Smith", "J. Doe", "M. Chen", "S. Patel", "K. Johnson", "L. Silva", "R. Al-Fayed"];
 
-const INITIAL_DATA = Array.from({ length: 20 }, (_, i) => ({
-  time: `${10 + Math.floor(i/4)}:${(i%4)*15}`,
-  issued: 20 + Math.random() * 15,
-  active: 80 + Math.random() * 20
-}));
-
 export default function LiveMonitor() {
   const [logs, setLogs] = useState<LogEntry[]>([]);
-  const [chartData, setChartData] = useState(INITIAL_DATA);
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeView, setActiveView] = useState(0);
 
@@ -52,21 +44,6 @@ export default function LiveMonitor() {
       };
       setLogs(prev => [newLog, ...prev].slice(0, 15));
     }, 1500);
-    return () => clearInterval(interval);
-  }, []);
-
-  // Simulate live chart data
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setChartData(prev => {
-        const newData = [...prev.slice(1), {
-          time: new Date().toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit' }),
-          issued: 20 + Math.random() * 15,
-          active: 80 + Math.random() * 20
-        }];
-        return newData;
-      });
-    }, 2500);
     return () => clearInterval(interval);
   }, []);
 
@@ -108,7 +85,7 @@ export default function LiveMonitor() {
           <div className="lg:col-span-7 border-r border-white/5 flex flex-col">
             
             {/* Main Visual Area */}
-            <div className="p-4 border-b border-white/5 bg-black/20 relative min-h-[220px]">
+            <div className="p-4 border-b border-white/5 bg-black/20 relative min-h-[250px] flex-1">
               
               {/* View 1: Smart Card Visualization */}
               <div className={`absolute inset-0 transition-opacity duration-1000 ${activeView === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}>
@@ -140,36 +117,28 @@ export default function LiveMonitor() {
               <div className="absolute inset-0 z-20 bg-[linear-gradient(transparent_50%,rgba(0,0,0,0.25)_50%)] bg-[length:100%_4px] pointer-events-none opacity-30" />
             </div>
 
-            {/* Analytics Chart */}
-            <div className="p-4 flex-1 min-h-[180px]">
-              <div className="flex justify-between items-center mb-2">
-                <h4 className="text-[10px] font-mono text-muted-foreground uppercase">Identity Issuance vs Active Access</h4>
-                <CreditCard className="h-3 w-3 text-primary/50" />
-              </div>
-              <div className="h-full w-full min-h-[150px]">
-                <ResponsiveContainer width="100%" height="100%">
-                  <AreaChart data={chartData}>
-                    <defs>
-                      <linearGradient id="colorIssued" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="#f59c00" stopOpacity={0.3}/>
-                        <stop offset="95%" stopColor="#f59c00" stopOpacity={0}/>
-                      </linearGradient>
-                      <linearGradient id="colorActive" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="#133070" stopOpacity={0.3}/>
-                        <stop offset="95%" stopColor="#133070" stopOpacity={0}/>
-                      </linearGradient>
-                    </defs>
-                    <XAxis dataKey="time" hide />
-                    <YAxis hide />
-                    <Tooltip 
-                      contentStyle={{ backgroundColor: '#000', border: '1px solid #333', fontSize: '10px' }}
-                      itemStyle={{ padding: 0 }}
-                    />
-                    <Area type="monotone" dataKey="issued" stroke="#f59c00" fillOpacity={1} fill="url(#colorIssued)" strokeWidth={2} />
-                    <Area type="monotone" dataKey="active" stroke="#133070" fillOpacity={1} fill="url(#colorActive)" strokeWidth={2} />
-                  </AreaChart>
-                </ResponsiveContainer>
-              </div>
+            {/* Simple Stats Grid (Replacing Chart) */}
+            <div className="p-4 h-[150px] grid grid-cols-2 gap-4">
+               <div className="bg-white/5 border border-white/10 rounded p-3 flex flex-col justify-center">
+                  <div className="text-[10px] text-muted-foreground mb-1 flex items-center gap-2">
+                     <CreditCard className="h-3 w-3 text-primary" />
+                     <span>CARDS ISSUED</span>
+                  </div>
+                  <div className="text-2xl font-bold text-white font-mono">1,284</div>
+                  <div className="w-full bg-white/10 h-1 mt-2 rounded-full overflow-hidden">
+                     <div className="h-full bg-primary w-[70%]" />
+                  </div>
+               </div>
+               <div className="bg-white/5 border border-white/10 rounded p-3 flex flex-col justify-center">
+                  <div className="text-[10px] text-muted-foreground mb-1 flex items-center gap-2">
+                     <UserCheck className="h-3 w-3 text-green-500" />
+                     <span>ACTIVE ACCESS</span>
+                  </div>
+                  <div className="text-2xl font-bold text-white font-mono">8,942</div>
+                   <div className="w-full bg-white/10 h-1 mt-2 rounded-full overflow-hidden">
+                     <div className="h-full bg-green-500 w-[92%]" />
+                  </div>
+               </div>
             </div>
           </div>
 
