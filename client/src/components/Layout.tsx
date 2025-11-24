@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ParticleBackground from "@/components/ParticleBackground";
 import SecurityHUD from "@/components/SecurityHUD";
-import CustomCursor from "@/components/CustomCursor";
+// import CustomCursor from "@/components/CustomCursor";
 import { useEffect } from "react";
 import { useLocation } from "wouter";
 
@@ -14,8 +14,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   }, [location]);
 
   return (
-    <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/30 relative cursor-none">
-      <CustomCursor />
+    <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/30 relative">
+      {/* CustomCursor removed for performance */}
+      {/* <CustomCursor /> */}
       <SecurityHUD />
       <ParticleBackground />
       <Navbar />
