@@ -8,6 +8,7 @@ import Solutions from "@/pages/Solutions";
 import Products from "@/pages/Products";
 import Company from "@/pages/Company";
 import IndustriesPage from "@/pages/IndustriesPage";
+import ComingSoon from "@/pages/ComingSoon";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -18,6 +19,7 @@ function Router() {
       <Route path="/products" component={Products} />
       <Route path="/company" component={Company} />
       <Route path="/industries" component={IndustriesPage} />
+      <Route path="/coming-soon" component={ComingSoon} />
       <Route component={NotFound} />
     </Switch>
   );

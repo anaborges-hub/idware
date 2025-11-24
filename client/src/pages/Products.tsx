@@ -38,7 +38,7 @@ export default function Products() {
           </div>
           <div className="flex-1">
             <h2 className="text-3xl font-bold font-display mb-4 flex items-center gap-3">
-              <span className="text-primary">01.</span> ID-Command
+              <span className="text-primary">01.</span> ID-ware Command/Citadel
             </h2>
             <p className="text-xl text-muted-foreground mb-6">
               The central nervous system for your security operations.
@@ -56,9 +56,21 @@ export default function Products() {
                 <div>99.999%</div>
               </div>
             </div>
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
-              View Specs <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
+            <div className="flex flex-wrap gap-4">
+              <Button 
+                className="bg-primary hover:bg-primary/90 text-primary-foreground"
+                onClick={() => window.location.href = "/coming-soon"}
+              >
+                Request Demo <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+              <Button 
+                variant="outline" 
+                className="border-primary/50 text-primary hover:bg-primary/10"
+                onClick={() => window.location.href = "/coming-soon"}
+              >
+                Prices
+              </Button>
+            </div>
           </div>
         </div>
 
