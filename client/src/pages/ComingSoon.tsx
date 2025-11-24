@@ -30,11 +30,11 @@ export default function ComingSoon() {
           </div>
 
           <h1 className="text-4xl md:text-6xl font-bold font-display mb-6">
-            System <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-amber-200">Upgrade</span> in Progress
+            Erhhh <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-amber-200">Error 404</span>
           </h1>
 
           <p className="text-xl text-muted-foreground mb-12 max-w-lg mx-auto">
-            Our engineers are currently deploying this module. The requested interface will be online shortly.
+            Not found. This is currently under construction.
           </p>
 
           <div className="grid grid-cols-3 gap-4 max-w-md mx-auto font-mono text-xs text-primary/70">
