@@ -47,7 +47,7 @@ export default function Hero() {
               <h1 className="text-5xl md:text-7xl font-bold font-display leading-tight mb-6 tracking-tight">
                 Secure Your World with <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-amber-200">
-                  <GlitchText text="Intelligent Identity" />
+                  Intelligent Identity
                 </span>
               </h1>
               
