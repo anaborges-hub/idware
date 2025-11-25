@@ -1,5 +1,5 @@
 import { Shield } from "lucide-react";
-import logo from "@assets/generated_images/id-ware_white_logo.png";
+import idWareLogo from "@assets/ID-ware Logo (solo) weiss_1763985113528.png";
 
 export default function Footer() {
   return (
@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 md:col-span-1">
             <div className="flex items-center gap-2 mb-6">
-              <img src={logo} alt="ID-ware" className="h-8 w-auto opacity-90" />
+              <img src={idWareLogo} alt="ID-ware" className="h-8 w-auto opacity-90" />
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Global provider of Physical Identity and Access Management (PIAM) solutions, securing the world's largest organizations.
