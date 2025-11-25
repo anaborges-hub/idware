@@ -7,10 +7,10 @@ import GlitchText from "@/components/GlitchText";
 
 export default function Company() {
   const stats = [
-    { label: "Founded", value: "2010" },
-    { label: "Employees", value: "850+" },
-    { label: "Patents", value: "42" },
-    { label: "Offices", value: "12" },
+    { label: "Founded", value: "2002" }, // Updated based on >20 years experience
+    { label: "Employees", value: "130+" },
+    { label: "Experience", value: ">20 Yrs" },
+    { label: "Offices", value: "Global" },
   ];
 
   const values = [
@@ -46,12 +46,38 @@ export default function Company() {
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-7xl font-bold font-display mb-8"
           >
-            We Are <span className="text-primary"><GlitchText text="ID" /></span>
+            We Are <span className="text-primary"><GlitchText text="IDware" /></span>
           </motion.h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            On a mission to secure the world's most critical assets through intelligent identity management. 
-            We bridge the gap between physical and digital security.
-          </p>
+          
+          <div className="grid md:grid-cols-2 gap-12 text-left max-w-4xl mx-auto mt-16 mb-16">
+            <div className="bg-card/30 p-8 rounded-xl border border-white/5">
+              <h3 className="text-2xl font-bold font-display mb-4 text-primary">Mission</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                We partner with our customers and provide state-of-the-art identity and access management solutions for physical access.
+              </p>
+            </div>
+            <div className="bg-card/30 p-8 rounded-xl border border-white/5">
+              <h3 className="text-2xl font-bold font-display mb-4 text-primary">Vision</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                The protection of resources and costs – whether human or material – is key for any organisation. Only if these resources and assets are available in complete and intact form, an organisation is enabled to constantly operate.
+              </p>
+            </div>
+          </div>
+
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-3xl font-bold font-display mb-6">Leader in PIAM Solutions</h2>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              With more than 130 employees worldwide, ID-ware is a leading global provider of state-of-the-art Physical Identity and Access Management (PIAM) solutions.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              With over 20 years of experience, we are a specialised expert for smart identification and authentication processes, delivering software and services as well as related hardware.
+            </p>
+            <div className="p-4 bg-primary/5 border border-primary/20 rounded-lg inline-block">
+              <p className="text-sm text-primary font-mono">
+                We are an international company group with entities around the world, holding relevant quality management certifications such as <span className="font-bold">ISO 9001</span> and <span className="font-bold">27001</span>, and work according to the highest security and compliance standards.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 
