@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { Shield, UserCheck, FileCheck, CreditCard, RefreshCw, Printer, MapPin, Users, Activity } from "lucide-react";
 import smartCard from "@assets/generated_images/smart_card_visualization.png";
-import accessMap from "@assets/generated_images/access_control_map.png";
+import accessMap from "@assets/generated_images/holographic_world_map_data.png";
 
 interface LogEntry {
   id: number;
@@ -102,7 +102,7 @@ export default function LiveMonitor() {
 
               {/* View 2: Global Access Map */}
               <div className={`absolute inset-0 transition-opacity duration-1000 ${activeView === 1 ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}>
-                 <img src={accessMap} alt="Global Map" className="w-full h-full object-cover opacity-80 mix-blend-screen" />
+                 <img src={accessMap} alt="Global Map" className="w-full h-full object-cover opacity-90" />
                  <div className="absolute top-4 left-4 bg-black/60 px-3 py-1 rounded border border-green-500/30 text-[10px] font-mono text-green-500 flex items-center gap-2">
                     <Activity className="h-3 w-3" />
                     <span>GLOBAL ACCESS: NORMAL</span>
