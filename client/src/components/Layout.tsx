@@ -23,7 +23,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <main className="relative z-10 min-h-screen pt-20">
         {children}
       </main>
-      <Footer />
+      <div className="relative z-10">
+        <Footer />
+      </div>
     </div>
   );
 }
