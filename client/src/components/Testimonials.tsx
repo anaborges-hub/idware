@@ -12,7 +12,7 @@ export default function Testimonials() {
                 <Quote size={64} />
               </div>
               <p className="text-2xl md:text-4xl font-display leading-tight font-medium relative z-10">
-                "ID transformed how we manage access across our 45 global offices. We reduced badge provisioning time by 90% and finally achieved 100% audit compliance."
+                "IDware transformed how we manage access across our 45 global offices. We reduced badge provisioning time by 90% and finally achieved 100% audit compliance."
               </p>
             </div>
             

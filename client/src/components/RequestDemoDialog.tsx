@@ -50,7 +50,7 @@ export default function RequestDemoDialog({ children }: { children: React.ReactN
         <DialogHeader>
           <DialogTitle className="text-2xl font-display">Request a Demo</DialogTitle>
           <DialogDescription className="text-muted-foreground">
-            See how ID can secure your organization. Fill out the form below and our team will get in touch.
+            See how IDware can secure your organization. Fill out the form below and our team will get in touch.
           </DialogDescription>
         </DialogHeader>
         

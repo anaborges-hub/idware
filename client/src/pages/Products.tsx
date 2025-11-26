@@ -38,7 +38,7 @@ export default function Products() {
           </div>
           <div className="flex-1">
             <h2 className="text-3xl font-bold font-display mb-4 flex items-center gap-3">
-              <span className="text-primary">01.</span> ID-ware Command/Citadel
+              <span className="text-primary">01.</span> IDware Command/Citadel
             </h2>
             <p className="text-xl text-muted-foreground mb-6">
               The central nervous system for your security operations.
