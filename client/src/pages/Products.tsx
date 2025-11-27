@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import dashboardImg from "@assets/generated_images/futuristic_security_software_dashboard_on_multiple_monitors.png";
+import dashboardImg from "@assets/generated_images/image.png";
 import kioskImg from "@assets/generated_images/high_tech_biometric_scanning_kiosk_3d_render.png";
 import GlitchText from "@/components/GlitchText";
 import DecryptText from "@/components/DecryptText";
@@ -38,7 +38,7 @@ export default function Products() {
           </div>
           <div className="flex-1">
             <h2 className="text-3xl font-bold font-display mb-4 flex items-center gap-3">
-              <span className="text-primary">01.</span> IDware Command/Citadel
+              <span className="text-primary">01.</span> ID-ware Command/Citadel
             </h2>
             <p className="text-xl text-muted-foreground mb-6">
               The central nervous system for your security operations.
@@ -103,7 +103,7 @@ export default function Products() {
               </div>
               <div className="p-3 border border-white/10 rounded bg-card/30">
                 <div className="text-primary mb-1">BUILD</div>
-                <div>Aluminum</div>
+                <div>Aluminium</div>
               </div>
             </div>
             <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">

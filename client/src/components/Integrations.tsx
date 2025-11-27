@@ -23,7 +23,7 @@ export default function Integrations() {
               Connects with your existing infrastructure
             </h2>
             <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-              Don't rip and replace. IDware acts as the intelligent orchestration layer that sits on top of your existing PACS, HR, and IT systems. We support over 200+ native integrations out of the box.
+              Don't rip and replace. ID-ware acts as the intelligent orchestration layer that sits on top of your existing PACS, HR, and IT systems. We support over 200+ native integrations out of the box.
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -61,7 +61,7 @@ export default function Integrations() {
                 <div className="flex items-center justify-center">
                   <div className="h-24 w-24 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center relative animate-pulse">
                     <div className="absolute inset-0 rounded-full border border-primary/20 animate-ping" />
-                    <span className="font-bold font-display text-2xl text-primary">IDware</span>
+                    <span className="font-bold font-display text-2xl text-primary">ID-ware</span>
                   </div>
                 </div>
                 

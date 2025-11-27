@@ -46,7 +46,7 @@ export default function Company() {
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-7xl font-bold font-display mb-8"
           >
-            We Are <span className="text-primary"><GlitchText text="IDware" /></span>
+            We Are <span className="text-primary"><GlitchText text="ID-ware" /></span>
           </motion.h1>
           
           <div className="grid md:grid-cols-2 gap-12 text-left max-w-4xl mx-auto mt-16 mb-16">
@@ -67,7 +67,7 @@ export default function Company() {
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-3xl font-bold font-display mb-6">Leader in PIAM Solutions</h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              With more than 130 employees worldwide, IDware is a leading global provider of state-of-the-art Physical Identity and Access Management (PIAM) solutions.
+              With more than 130 employees worldwide, ID-ware is a leading global provider of state-of-the-art Physical Identity and Access Management (PIAM) solutions.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-6">
               With over 20 years of experience, we are a specialised expert for smart identification and authentication processes, delivering software and services as well as related hardware.

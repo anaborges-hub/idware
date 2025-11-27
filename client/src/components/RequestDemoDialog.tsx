@@ -1,7 +1,6 @@
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -50,7 +49,7 @@ export default function RequestDemoDialog({ children }: { children: React.ReactN
         <DialogHeader>
           <DialogTitle className="text-2xl font-display">Request a Demo</DialogTitle>
           <DialogDescription className="text-muted-foreground">
-            See how IDware can secure your organization. Fill out the form below and our team will get in touch.
+            See how ID-ware can secure your organization. Fill out the form below and our team will get in touch.
           </DialogDescription>
         </DialogHeader>
         

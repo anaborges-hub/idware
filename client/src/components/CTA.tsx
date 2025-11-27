@@ -12,7 +12,7 @@ export default function CTA() {
           Ready to modernize your security infrastructure?
         </h2>
         <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
-          Join the world's leading organizations in securing their workforce and facilities with IDware's intelligent platform.
+          Join the world's leading organizations in securing their workforce and facilities with ID-ware's intelligent platform.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <RequestDemoDialog>

@@ -39,7 +39,7 @@ export default function Footer() {
                         <h3 className="font-bold mb-4 text-foreground">Connect</h3>
                         <ul className="space-y-3 text-sm text-muted-foreground">
                             <li><a href="https://www.linkedin.com/company/cipher10/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">LinkedIn</a></li>
-                            <li><a href="#" className="hover:text-primary transition-colors">Twitter</a></li>
+                            <li><a href="https://www.youtube.com/@ID-ware" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Youtube</a></li>
                         </ul>
                     </div>
                 </div>
