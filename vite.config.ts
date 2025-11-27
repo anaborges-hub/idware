@@ -4,7 +4,10 @@ import tailwindcss from "@tailwindcss/vite";
 import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
+const base = process.env.VITE_BASE ?? "/"; // allow GitHub Pages base path while keeping other envs at root
+
 export default defineConfig({
+  base,
   plugins: [
     react(),
     runtimeErrorOverlay(),
