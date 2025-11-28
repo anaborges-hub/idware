@@ -4,8 +4,6 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import dashboardImg from "@assets/generated_images/image.png";
 import kioskImg from "@assets/generated_images/high_tech_biometric_scanning_kiosk_3d_render.png";
-import GlitchText from "@/components/GlitchText";
-import DecryptText from "@/components/DecryptText";
 
 export default function Products() {
   return (
@@ -20,7 +18,7 @@ export default function Products() {
             HARDWARE // SOFTWARE
           </motion.div>
           <h1 className="text-4xl md:text-6xl font-bold font-display mb-6">
-            Product <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-amber-200">Ecosystem</span>
+                      Product <span className="text-primary">Ecosystem</span>
           </h1>
         </div>
 
@@ -66,7 +64,7 @@ export default function Products() {
               <Button 
                 variant="outline" 
                 className="border-primary/50 text-primary hover:bg-primary/10"
-                onClick={() => window.location.href = "/coming-soon"}
+                              onClick={() => window.location.href = "/pricing"}
               >
                 Prices
               </Button>

@@ -8,37 +8,39 @@ import Solutions from "@/pages/Solutions";
 import Products from "@/pages/Products";
 import Company from "@/pages/Company";
 import IndustriesPage from "@/pages/IndustriesPage";
+import Pricing from "@/pages/Pricing";
 import ComingSoon from "@/pages/ComingSoon";
 import NotFound from "@/pages/not-found";
 
 function AppRouter() {
-  return (
-    <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/solutions" component={Solutions} />
-      <Route path="/products" component={Products} />
-      <Route path="/company" component={Company} />
-      <Route path="/industries" component={IndustriesPage} />
-      <Route path="/coming-soon" component={ComingSoon} />
-      <Route component={NotFound} />
-    </Switch>
-  );
+    return (
+        <Switch>
+            <Route path="/" component={Home} />
+            <Route path="/solutions" component={Solutions} />
+            <Route path="/products" component={Products} />
+            <Route path="/company" component={Company} />
+            <Route path="/industries" component={IndustriesPage} />
+            <Route path="/pricing" component={Pricing} />
+            <Route path="/coming-soon" component={ComingSoon} />
+            <Route component={NotFound} />
+        </Switch>
+    );
 }
 
 function App() {
-  const base = (import.meta.env.BASE_URL ?? "/").replace(/\/+$/, "");
-  const routerBase = base === "" ? undefined : base;
+    const base = (import.meta.env.BASE_URL ?? "/").replace(/\/+$/, "");
+    const routerBase = base === "" ? undefined : base;
 
-  return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Router base={routerBase}>
-          <AppRouter />
-        </Router>
-      </TooltipProvider>
-    </QueryClientProvider>
-  );
+    return (
+        <QueryClientProvider client={queryClient}>
+            <TooltipProvider>
+                <Toaster />
+                <Router base={routerBase}>
+                    <AppRouter />
+                </Router>
+            </TooltipProvider>
+        </QueryClientProvider>
+    );
 }
 
 export default App;

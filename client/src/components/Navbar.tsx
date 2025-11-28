@@ -31,7 +31,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (
             <Link key={link.href} href={link.href}>
               <span className={cn(
@@ -50,31 +50,35 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Toggle */}
-        <button className="md:hidden text-foreground" onClick={() => setIsOpen(!isOpen)}>
+        <button className="lg:hidden text-foreground p-2" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X /> : <Menu />}
         </button>
       </div>
 
       {/* Mobile Nav */}
       {isOpen && (
-        <div className="md:hidden absolute top-20 left-0 w-full bg-background border-b border-white/10 p-6 flex flex-col gap-4 animate-in slide-in-from-top-5">
-          {navLinks.map((link) => (
-            <Link key={link.href} href={link.href}>
-              <span 
-                className={cn(
-                  "text-lg font-medium cursor-pointer",
-                  location === link.href ? "text-primary" : "text-foreground"
-                )} 
-                onClick={() => setIsOpen(false)}
-              >
-                {link.label}
-              </span>
-            </Link>
-          ))}
-          <RequestDemoDialog>
-            <Button className="w-full mt-4">Request Demo</Button>
-          </RequestDemoDialog>
-        </div>
+              <div className="lg:hidden absolute top-20 left-0 w-full h-[calc(100vh-5rem)] bg-background/95 backdrop-blur-xl border-t border-white/10 p-6 flex flex-col gap-6 animate-in slide-in-from-top-5 z-40">
+                  <div className="flex flex-col gap-6 mt-8">
+                      {navLinks.map((link) => (
+                          <Link key={link.href} href={link.href}>
+                              <span
+                                  className={cn(
+                                      "text-2xl font-display font-bold cursor-pointer transition-colors",
+                                      location === link.href ? "text-primary" : "text-muted-foreground hover:text-foreground"
+                                  )}
+                                  onClick={() => setIsOpen(false)}
+                              >
+                                  {link.label}
+                              </span>
+                          </Link>
+                      ))}
+                  </div>
+                  <div className="mt-auto mb-8">
+                      <RequestDemoDialog>
+                          <Button className="w-full h-12 text-lg bg-primary text-primary-foreground">Request Demo</Button>
+                      </RequestDemoDialog>
+                  </div>
+                </div>
       )}
     </nav>
   );

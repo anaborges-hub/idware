@@ -1,8 +1,7 @@
 import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { CheckCircle2, Server, Shield, Users, Lock, CreditCard } from "lucide-react";
-import GlitchText from "@/components/GlitchText";
+import { CheckCircle2, Server, Shield, Users, CreditCard } from "lucide-react";
 import solutionsHero from "@assets/generated_images/physical_security_solutions_hero.png";
 
 export default function Solutions() {
@@ -43,7 +42,7 @@ export default function Solutions() {
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-6xl font-bold font-display mb-6"
           >
-            Enterprise <span className="text-primary"><GlitchText text="Security Solutions" /></span>
+            Enterprise <span className="text-primary">Security Solutions </span>
           </motion.h1>
           <p className="text-xl text-muted-foreground font-mono">
             Comprehensive protection for the modern physical-digital landscape.

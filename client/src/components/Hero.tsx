@@ -4,8 +4,6 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 import heroBg from "@assets/generated_images/abstract_digital_security_network_background.png";
 import RequestDemoDialog from "@/components/RequestDemoDialog";
 import LiveMonitor from "@/components/LiveMonitor";
-import GlitchText from "@/components/GlitchText";
-import DecryptText from "@/components/DecryptText";
 
 export default function Hero() {
   return (
@@ -46,7 +44,7 @@ export default function Hero() {
               
               <h1 className="text-5xl md:text-7xl font-bold font-display leading-tight mb-6 tracking-tight">
                 Secure Your World with <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-amber-200">
+                <span className="text-primary">
                   Intelligent Identity
                 </span>
               </h1>

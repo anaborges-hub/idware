@@ -1,7 +1,6 @@
 import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
-import { Card } from "@/components/ui/card";
-import { Building2, Globe, HeartHandshake, Trophy } from "lucide-react";
+import { Globe, HeartHandshake, Trophy } from "lucide-react";
 import officeImg from "@assets/generated_images/modern_high_tech_security_operations_center.png";
 import GlitchText from "@/components/GlitchText";
 
