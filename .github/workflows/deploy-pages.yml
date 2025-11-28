@@ -19,6 +19,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
+      # Your site is at: https://anaborges-hub.github.io/idware/
+      # So Vite's base must be /idware/
       VITE_BASE: "/idware/"
 
     steps:
@@ -38,3 +40,27 @@ jobs:
         uses: actions/configure-pages@v5
         with:
           enablement: true
+
+      - name: Build
+        run: npm run build
+
+      - name: Add SPA fallback and disable Jekyll
+        run: |
+          cp dist/public/index.html dist/public/404.html
+          touch dist/public/.nojekyll
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
