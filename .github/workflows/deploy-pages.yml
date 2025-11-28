@@ -41,9 +41,10 @@ jobs:
         env:
           VITE_BASE: "/${{ github.event.repository.name }}/"
 
-      - name: Add SPA fallback and .nojekyll
-        run: cp dist/public/index.html dist/public/404.html
-            touch dist/public/.nojekyll
+      - name: Add SPA fallback and disable Jekyll
+        run: |
+          cp dist/public/index.html dist/public/404.html
+          touch dist/public/.nojekyll
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
