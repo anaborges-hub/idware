@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2, MapPin, ArrowLeft } from "lucide-react";
+import { ArrowRight, MapPin, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 

@@ -48,9 +48,9 @@ export default function Footer() {
                 <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-muted-foreground">
                     <p>&copy; 2025 ID-ware Group. All rights reserved.</p>
                     <div className="flex gap-6">
-                        <a href="/company/imprint" className="hover:text-foreground">Imprint</a>
-                        <a href="/company/privacy-policy" className="hover:text-foreground">Privacy Policy</a>
-                        <a href="/company/cookie-policy" className="hover:text-foreground">Cookie Policy</a>
+                        <Link href="/company/imprint" className="hover:text-foreground">Imprint</Link>
+                        <Link href="/company/privacy-policy" className="hover:text-foreground">Privacy Policy</Link>
+                        <Link href="/company/cookie-policy" className="hover:text-foreground">Cookie Policy</Link>
                     </div>
                 </div>
             </div>

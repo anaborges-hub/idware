@@ -1,11 +1,11 @@
 import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
+import { Link } from "wouter";
 
 export default function Contact() {
     return (
@@ -102,7 +102,7 @@ export default function Contact() {
                                             <div className="space-y-3">
                                                 <h4 className="font-bold text-sm uppercase tracking-wider text-muted-foreground">Privacy</h4>
                                                 <p className="text-xs text-muted-foreground leading-relaxed">
-                                                    I agree that my details from the contact form will be collected and processed to answer my query. The data will be deleted after your request has been processed. Detailed information on how we handle user data can be found in our <a href="/company/privacy-policy" className="text-primary hover:underline">Privacy Policy</a>.
+                                                    I agree that my details from the contact form will be collected and processed to answer my query. The data will be deleted after your request has been processed. Detailed information on how we handle user data can be found in our <Link href="/company/privacy-policy" className="text-primary hover:underline">Privacy Policy</Link>.
                                                 </p>
                                             </div>
 

@@ -22,6 +22,8 @@ import PrivacyPolicy from "@/pages/company/PrivacyPolicy";
 import Imprint from "@/pages/company/Imprint";
 import CookiePolicy from "@/pages/company/CookiePolicy";
 import RtsSpectrumEvent from "./pages/company/press/RtsSpectrumEvent";
+import NothingToSee from "@/pages/company/press/NothingToSee";
+
 
 
 function AppRouter() {
@@ -45,6 +47,7 @@ function AppRouter() {
             <Route path="/company/press" component={Press} />
             <Route path="/company/press" component={Press} />
             <Route path="/company/press/rts-spectrum-event-2025" component={RtsSpectrumEvent} />
+            <Route path="/company/press/nothing-to-see" component={NothingToSee} />
             <Route path="/company/contact" component={Contact} />
 
             {/* Legal & Security */}
