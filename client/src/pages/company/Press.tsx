@@ -2,9 +2,10 @@ import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
 import { ArrowRight, Newspaper, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 
 export default function Press() {
+    const [, navigate] = useLocation();
     const news = [
         {
             date: "March 15, 2025",
@@ -57,11 +58,13 @@ export default function Press() {
                                         <p className="text-sm text-primary font-mono mb-2">{item.date}</p>
                                         <h3 className="text-2xl font-bold mb-4 font-display">{item.title}</h3>
                                         <p className="text-muted-foreground mb-6 leading-relaxed">{item.excerpt}</p>
-                                        <a href={item.link}>
-                                            <Button variant="link" className="p-0 h-auto text-primary hover:text-primary/80">
-                                                Read Full Story <ArrowRight className="w-4 h-4 ml-2" />
-                                            </Button>
-                                        </a>
+                                        <Button
+                                            variant="link"
+                                            className="p-0 h-auto text-primary hover:text-primary/80"
+                                            onClick={() => navigate(item.link)}
+                                        >
+                                            Read Full Story <ArrowRight className="w-4 h-4 ml-2" />
+                                        </Button>
                                     </div>
                                 ))}
                             </div>
