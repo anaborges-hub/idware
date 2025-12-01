@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import logo1 from "@assets/SP-logo.png";
 import logo2 from "@assets/CF-logo.webp";
 import logo3 from "@assets/NP-logo.png";

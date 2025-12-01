@@ -18,6 +18,9 @@ import PhysicalSecurityIntegration from "@/pages/solutions/PhysicalSecurityInteg
 import Careers from "@/pages/company/Careers";
 import Press from "@/pages/company/Press";
 import Contact from "@/pages/company/Contact";
+import PrivacyPolicy from "@/pages/company/PrivacyPolicy";
+import Imprint from "@/pages/company/Imprint";
+import CookiePolicy from "@/pages/company/CookiePolicy";
 import RtsSpectrumEvent from "./pages/company/press/RtsSpectrumEvent";
 
 
@@ -43,6 +46,11 @@ function AppRouter() {
             <Route path="/company/press" component={Press} />
             <Route path="/company/press/rts-spectrum-event-2025" component={RtsSpectrumEvent} />
             <Route path="/company/contact" component={Contact} />
+
+            {/* Legal & Security */}
+            <Route path="/company/imprint" component={Imprint} />
+            <Route path="/company/privacy-policy" component={PrivacyPolicy} />
+            <Route path="/company/cookie-policy" component={CookiePolicy} />
             <Route component={NotFound} />
         </Switch>
     );
