@@ -1,4 +1,5 @@
 import { Shield } from "lucide-react";
+import { Link } from "wouter";
 import idWareLogo from "@assets/ID-ware Logo (solo) weiss_1763985113528.png";
 
 export default function Footer() {
@@ -18,20 +19,20 @@ export default function Footer() {
                     <div>
                         <h3 className="font-bold mb-4 text-foreground">Solutions</h3>
                         <ul className="space-y-3 text-sm text-muted-foreground">
-                            <li><a href="/solutions/credential-management" className="hover:text-primary transition-colors">Credential Management</a></li>
-                            <li><a href="/solutions/visitor-management" className="hover:text-primary transition-colors">Visitor Management</a></li>
-                            <li><a href="/solutions/contractor-access" className="hover:text-primary transition-colors">Contractor Access</a></li>
-                            <li><a href="/solutions/physical-security-integration" className="hover:text-primary transition-colors">Physical Security Integration</a></li>
+                            <li><Link href="/solutions/credential-management" className="hover:text-primary transition-colors">Credential Management</Link></li>
+                            <li><Link href="/solutions/visitor-management" className="hover:text-primary transition-colors">Visitor Management</Link></li>
+                            <li><Link href="/solutions/contractor-access" className="hover:text-primary transition-colors">Contractor Access</Link></li>
+                            <li><Link href="/solutions/physical-security-integration" className="hover:text-primary transition-colors">Physical Security Integration</Link></li>
                         </ul>
                     </div>
 
                     <div>
                         <h3 className="font-bold mb-4 text-foreground">Company</h3>
                         <ul className="space-y-3 text-sm text-muted-foreground">
-                            <li><a href="/company" className="hover:text-primary transition-colors">About Us</a></li>
-                            <li><a href="/company/careers" className="hover:text-primary transition-colors">Careers</a></li>
-                            <li><a href="/company/press" className="hover:text-primary transition-colors">Press</a></li>
-                            <li><a href="/company/contact" className="hover:text-primary transition-colors">Contact</a></li>
+                            <li><Link href="/company" className="hover:text-primary transition-colors">About Us</Link></li>
+                            <li><Link href="/company/careers" className="hover:text-primary transition-colors">Careers</Link></li>
+                            <li><Link href="/company/press" className="hover:text-primary transition-colors">Press</Link></li>
+                            <li><Link href="/company/contact" className="hover:text-primary transition-colors">Contact</Link></li>
                         </ul>
                     </div>
 
