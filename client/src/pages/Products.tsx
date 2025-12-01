@@ -2,10 +2,13 @@ import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { useLocation } from "wouter";
 import dashboardImg from "@assets/generated_images/image.png";
 import kioskImg from "@assets/generated_images/high_tech_biometric_scanning_kiosk_3d_render.png";
 
 export default function Products() {
+  const [, navigate] = useLocation();
+
   return (
     <Layout>
       <div className="container mx-auto px-6 py-12">
@@ -57,14 +60,14 @@ export default function Products() {
             <div className="flex flex-wrap gap-4">
               <Button 
                 className="bg-primary hover:bg-primary/90 text-primary-foreground"
-                onClick={() => window.location.href = "/coming-soon"}
+                onClick={() => navigate("/coming-soon")}
               >
                 Request Demo <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
               <Button 
                 variant="outline" 
                 className="border-primary/50 text-primary hover:bg-primary/10"
-                              onClick={() => window.location.href = "/pricing"}
+                onClick={() => navigate("/pricing")}
               >
                 Prices
               </Button>
