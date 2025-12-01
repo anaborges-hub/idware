@@ -10,21 +10,21 @@ export default function Press() {
             date: "March 15, 2025",
             title: "December 1, 2025",
             excerpt: "Last Thursday, on 27 November 2025, we were part of the RTS Spectrum 2025 event, hosted by our partner RTS in Gent/Belgium. The closed event offered a platform to learn more ...",
-            link: "idware/company/press/rts-spectrum-event-2025"
+            link: "/company/press/rts-spectrum-event-2025"
 
         },
         {
             date: "February 10, 2025",
             title: "ID-ware Appoints Zak Habgood as New CTO",
             excerpt: "Industry veteran joins to lead the next generation of PIAM platform development.",
-            link: "idware/company/press/nothing-to-see"
+            link: "/company/press/nothing-to-see"
 
         },
         {
             date: "November 05, 2024",
             title: "ID-ware Expands Operations to UK",
             excerpt: "New London office opens to support growing demand from financial sector clients.",
-            link: "idware/company/press/nothing-to-see"
+            link: "/company/press/nothing-to-see"
         },
     ];
 
