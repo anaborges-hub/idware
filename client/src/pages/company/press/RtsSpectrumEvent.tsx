@@ -2,9 +2,10 @@ import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 
 export default function RtsSpectrumEvent() {
+    const [, navigate] = useLocation();
     return (
         <Layout>
             <div className="relative py-24 bg-background">
@@ -14,11 +15,9 @@ export default function RtsSpectrumEvent() {
                         animate={{ opacity: 1, y: 0 }}
                         className="max-w-3xl mx-auto"
                     >
-                        <Link href="/company/press">
-                            <Button variant="ghost" className="mb-8 pl-0 hover:pl-2 transition-all gap-2">
-                                <ArrowLeft className="w-4 h-4" /> Go back
-                            </Button>
-                        </Link>
+                        <Button variant="ghost" className="mb-8 pl-0 hover:pl-2 transition-all gap-2" onClick={() => navigate("/company/press")}>
+                            <ArrowLeft className="w-4 h-4" /> Go back
+                        </Button>
 
                         <span className="text-primary font-mono text-sm mb-4 block">December 1, 2025</span>
                         <h1 className="text-3xl md:text-5xl font-bold font-display mb-8 text-foreground">
@@ -36,11 +35,9 @@ export default function RtsSpectrumEvent() {
                                 It was a great opportunity to exchange about these topics with the audience! Many thanks to RTS for organising this outstanding event.
                             </p>
                         </div>
-                        <Link href="/company/press">
-                            <Button variant="ghost" className="mt-12 pl-0 hover:pl-2 transition-all gap-2">
-                                <ArrowLeft className="w-4 h-4" /> Go back
-                            </Button>
-                        </Link>
+                        <Button variant="ghost" className="mt-12 pl-0 hover:pl-2 transition-all gap-2" onClick={() => navigate("/company/press")}>
+                            <ArrowLeft className="w-4 h-4" /> Go back
+                        </Button>
                     </motion.div>
                 </div>
             </div>

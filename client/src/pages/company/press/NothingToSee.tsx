@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Ghost } from "lucide-react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 
 export default function NothingToSee() {
     return (
@@ -69,16 +69,21 @@ export default function NothingToSee() {
                         </motion.p>
 
                         <div className="flex justify-center gap-4">
-                            <Link href="/company/press">
-                                <Button size="lg" className="group">
-                                    <ArrowLeft className="mr-2 h-4 w-4 group-hover:-translate-x-1 transition-transform" />
-                                    Go Back to Real News
-                                </Button>
-                            </Link>
+                            <BackButton />
                         </div>
                     </motion.div>
                 </div>
             </div>
         </Layout>
+    );
+}
+
+function BackButton() {
+    const [, navigate] = useLocation();
+    return (
+        <Button size="lg" className="group" onClick={() => navigate("/company/press")}> 
+            <ArrowLeft className="mr-2 h-4 w-4 group-hover:-translate-x-1 transition-transform" />
+            Go Back to Real News
+        </Button>
     );
 }
