@@ -11,6 +11,14 @@ import IndustriesPage from "@/pages/IndustriesPage";
 import Pricing from "@/pages/Pricing";
 import ComingSoon from "@/pages/ComingSoon";
 import NotFound from "@/pages/not-found";
+import CredentialManagement from "@/pages/solutions/CredentialManagement";
+import VisitorManagement from "@/pages/solutions/VisitorManagement";
+import ContractorAccess from "@/pages/solutions/ContractorAccess";
+import PhysicalSecurityIntegration from "@/pages/solutions/PhysicalSecurityIntegration";
+import Careers from "@/pages/company/Careers";
+import Press from "@/pages/company/Press";
+import Contact from "@/pages/company/Contact";
+
 
 function AppRouter() {
     return (
@@ -22,6 +30,16 @@ function AppRouter() {
             <Route path="/industries" component={IndustriesPage} />
             <Route path="/pricing" component={Pricing} />
             <Route path="/coming-soon" component={ComingSoon} />
+            {/* Solution Pages */}
+            <Route path="/solutions/credential-management" component={CredentialManagement} />
+            <Route path="/solutions/visitor-management" component={VisitorManagement} />
+            <Route path="/solutions/contractor-access" component={ContractorAccess} />
+            <Route path="/solutions/physical-security-integration" component={PhysicalSecurityIntegration} />
+
+            {/* Company Pages */}
+            <Route path="/company/careers" component={Careers} />
+            <Route path="/company/press" component={Press} />
+            <Route path="/company/contact" component={Contact} />
             <Route component={NotFound} />
         </Switch>
     );

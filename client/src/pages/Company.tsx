@@ -1,8 +1,7 @@
 import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
-import { Globe, HeartHandshake, Trophy, Shield } from "lucide-react";
+import { Globe, HeartHandshake, Trophy, Shield, CheckCircle2, Briefcase, Cpu, Users } from "lucide-react"; 
 import officeImg from "@assets/building.png";
-import GlitchText from "@/components/GlitchText";
 import ceoImg from "@assets/BD.jpg";
 import ctoImg from "@assets/ZH.jpg";
 import cooImg from "@assets/RH.jpg";
@@ -36,6 +35,62 @@ export default function Company() {
             icon: Globe,
             title: "Global Impact",
             description: "Our solutions protect critical infrastructure and millions of people worldwide."
+        }
+    ];
+
+    const piamDrivers = [
+        "Physical security is turning more into cyber security.",
+        "Digitisation of processes.",
+        "Harmonisation and integration of systems.",
+        "Increasing security demands.",
+        "Increasing regulations, e.g. for critical infrastructure.",
+        "Compliance and auditability aspects.",
+        "Reduction of operational costs",
+        "Increase of automation."
+    ];
+
+    const services = [
+        {
+            icon: Cpu,
+            title: "Hardware & Personalisation",
+            description: "We supply related Hardware and a Personalisation Service for the programming and printing of physical identity cards and tokens."
+        },
+        {
+            icon: Shield,
+            title: "Credentials as a Service",
+            description: "Complete management of credential lifecycle, from issuance to revocation, delivered as a managed service."
+        },
+        {
+            icon: Briefcase,
+            title: "Consultancy & Support",
+            description: "Comprehensive Secure Credential Consultancy and Training, Support & Maintenance Services."
+        }
+    ];
+
+    const customers = [
+        {
+            title: "Public Sector & Critical Infrastructure",
+            description: "Ensuring secure and compliant physical access for government, public and essential services."
+        },
+        {
+            title: "Manufacturing & Industry",
+            description: "Protecting facilities, human resources, assets, and intellectual property."
+        },
+        {
+            title: "Financial Services",
+            description: "Meeting strict regulatory standards while safeguarding sensitive operations."
+        },
+        {
+            title: "University & Education",
+            description: "Managing thousands of credentials and access authorisations across buildings and sites including efficient mass enrolment."
+        },
+        {
+            title: "Aerospace & Defence",
+            description: "Supporting high-security environments with advanced physical access management."
+        },
+        {
+            title: "Healthcare & Medical",
+            description: "Safeguarding critical medical infrastructure and ensuring patient's and employee's security."
         }
     ];
 
@@ -188,6 +243,89 @@ export default function Company() {
                             <div className="text-sm text-muted-foreground uppercase tracking-wider font-mono">{stat.label}</div>
                         </div>
                     ))}
+                </div>
+
+                {/* New Section: Why PIAM? */}
+                <div className="mb-24 max-w-4xl mx-auto">
+                    <h2 className="text-3xl font-bold font-display mb-8 text-center">Why PIAM?</h2>
+                    <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
+                        PIAM solutions are mainly suited for complex organisations such as government customers, industry, financial institutions, universities, etc. There is an increasing need of PIAM solutions driven by:
+                    </p>
+                    <div className="grid md:grid-cols-2 gap-6">
+                        {piamDrivers.map((driver, i) => (
+                            <motion.div
+                                key={i}
+                                initial={{ opacity: 0, x: -10 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.1 }}
+                                className="flex items-start gap-3 p-4 rounded-lg bg-card/30 border border-white/5"
+                            >
+                                <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                                <span className="text-sm text-foreground/90">{driver}</span>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+
+                {/* New Section: Services */}
+                <div className="mb-24">
+                    <h2 className="text-3xl font-bold font-display mb-12 text-center">Our Product & Services Range</h2>
+                    <div className="grid md:grid-cols-3 gap-8">
+                        {services.map((service, i) => (
+                            <motion.div
+                                key={i}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.1 }}
+                                className="p-8 rounded-xl bg-gradient-to-br from-card/50 to-card/30 border border-white/10 text-center"
+                            >
+                                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6 text-primary">
+                                    <service.icon className="w-7 h-7" />
+                                </div>
+                                <h3 className="text-xl font-bold mb-4 font-display">{service.title}</h3>
+                                <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+
+                {/* New Section: Customers */}
+                <div className="mb-24">
+                    <div className="text-center max-w-3xl mx-auto mb-16">
+                        <h2 className="text-3xl font-bold font-display mb-6">Our Customers</h2>
+                        <p className="text-muted-foreground leading-relaxed">
+                            Our customers span a wide range of sectors, each with unique security and compliance needs. We provide dedicated PIAM solutions tailored to these environments.
+                        </p>
+                    </div>
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {customers.map((customer, i) => (
+                            <motion.div
+                                key={i}
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.05 }}
+                                className="p-6 rounded-xl bg-card/30 border border-white/5 hover:border-primary/30 transition-colors"
+                            >
+                                <div className="flex items-start gap-4">
+                                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 mt-1">
+                                        <Users className="w-5 h-5 text-primary" />
+                                    </div>
+                                    <div>
+                                        <h3 className="font-bold mb-2">{customer.title}</h3>
+                                        <p className="text-sm text-muted-foreground leading-relaxed">{customer.description}</p>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                    <div className="mt-12 p-8 rounded-xl bg-primary/5 border border-primary/10 text-center max-w-4xl mx-auto">
+                        <p className="text-muted-foreground">
+                            We support all our customers in streamlining processes, centralising authorisation and physical access management (cross-site), reducing costs, increasing compliance and auditability (e.g. ISO, NIS2, GDPR) as well as centralising documentation and reporting/evaluations.
+                        </p>
+                    </div>
                 </div>
 
                 {/* Leadership Team */}
