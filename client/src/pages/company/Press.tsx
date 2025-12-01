@@ -1,24 +1,30 @@
 import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
-import { ArrowRight, Newspaper } from "lucide-react";
+import { ArrowRight, Newspaper, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 
 export default function Press() {
     const news = [
         {
             date: "March 15, 2025",
-            title: "ID-ware and OmniCard Complete Merger",
-            excerpt: "The two leading providers join forces to create a European powerhouse in physical identity management."
+            title: "December 1, 2025",
+            excerpt: "Last Thursday, on 27 November 2025, we were part of the RTS Spectrum 2025 event, hosted by our partner RTS in Gent/Belgium. The closed event offered a platform to learn more ...",
+            link: "/company/press/rts-spectrum-event-2025"
+
         },
         {
             date: "February 10, 2025",
             title: "ID-ware Appoints Zak Habgood as New CTO",
-            excerpt: "Industry veteran joins to lead the next generation of PIAM platform development."
+            excerpt: "Industry veteran joins to lead the next generation of PIAM platform development.",
+            link: "#"
+
         },
         {
             date: "November 05, 2024",
             title: "ID-ware Expands Operations to UK",
-            excerpt: "New London office opens to support growing demand from financial sector clients."
+            excerpt: "New London office opens to support growing demand from financial sector clients.",
+            link: "#"
         },
     ];
 
@@ -37,6 +43,12 @@ export default function Press() {
                         <p className="text-xl text-muted-foreground mb-12 leading-relaxed">
                             Latest news, press releases, and media resources from ID-ware.
                         </p>
+                        <Link href="/company">
+                            <Button variant="ghost" className="mb-8 pl-0 hover:pl-2 transition-all gap-2">
+                                <ArrowLeft className="w-4 h-4" /> Back to Company
+                            </Button>
+                        </Link>
+
 
                         <div className="mb-16">
                             <div className="grid gap-8">
@@ -45,9 +57,11 @@ export default function Press() {
                                         <p className="text-sm text-primary font-mono mb-2">{item.date}</p>
                                         <h3 className="text-2xl font-bold mb-4 font-display">{item.title}</h3>
                                         <p className="text-muted-foreground mb-6 leading-relaxed">{item.excerpt}</p>
-                                        <Button variant="link" className="p-0 h-auto text-primary hover:text-primary/80">
-                                            Read Full Story <ArrowRight className="w-4 h-4 ml-2" />
-                                        </Button>
+                                        <a href={item.link}>
+                                            <Button variant="link" className="p-0 h-auto text-primary hover:text-primary/80">
+                                                Read Full Story <ArrowRight className="w-4 h-4 ml-2" />
+                                            </Button>
+                                        </a>
                                     </div>
                                 ))}
                             </div>

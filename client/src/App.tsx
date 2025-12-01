@@ -18,6 +18,7 @@ import PhysicalSecurityIntegration from "@/pages/solutions/PhysicalSecurityInteg
 import Careers from "@/pages/company/Careers";
 import Press from "@/pages/company/Press";
 import Contact from "@/pages/company/Contact";
+import RtsSpectrumEvent from "./pages/company/press/RtsSpectrumEvent";
 
 
 function AppRouter() {
@@ -39,6 +40,8 @@ function AppRouter() {
             {/* Company Pages */}
             <Route path="/company/careers" component={Careers} />
             <Route path="/company/press" component={Press} />
+            <Route path="/company/press" component={Press} />
+            <Route path="/company/press/rts-spectrum-event-2025" component={RtsSpectrumEvent} />
             <Route path="/company/contact" component={Contact} />
             <Route component={NotFound} />
         </Switch>

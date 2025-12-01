@@ -1,7 +1,8 @@
 import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2, MapPin } from "lucide-react";
+import { ArrowRight, CheckCircle2, MapPin, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 
 export default function Careers() {
     const positions = [
@@ -19,6 +20,12 @@ export default function Careers() {
                         animate={{ opacity: 1, y: 0 }}
                         className="max-w-4xl mx-auto"
                     >
+                        <Link href="/company">
+                            <Button variant="ghost" className="mb-8 pl-0 hover:pl-2 transition-all gap-2">
+                                <ArrowLeft className="w-4 h-4" /> Back to Company
+                            </Button>
+                        </Link>
+
                         <h1 className="text-4xl md:text-6xl font-bold font-display mb-6 text-foreground">
                             Careers at ID-ware
                         </h1>
