@@ -277,8 +277,8 @@ export default function Company() {
                                 key={i}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: i * 0.1 }}
+                                transition={{ duration: 0.3 }}
+                                viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
                                 className="p-8 rounded-xl bg-gradient-to-br from-card/50 to-card/30 border border-white/10 text-center"
                             >
                                 <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6 text-primary">
