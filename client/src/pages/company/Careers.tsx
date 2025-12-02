@@ -3,8 +3,11 @@ import { motion } from "framer-motion";
 import { ArrowRight, MapPin, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import { useState } from "react";
+import SecurityClearanceModal from "@/components/SecurityClearanceModal";
 
 export default function Careers() {
+    const [selectedJob, setSelectedJob] = useState<string | null>(null);
     const positions = [
         { title: "Senior Full Stack Developer", loc: "The Hague, Netherlands", type: "Full-time" },
         { title: "Project Manager PIAM", loc: "Frankfurt, Germany", type: "Full-time" },
@@ -13,6 +16,11 @@ export default function Careers() {
 
     return (
         <Layout>
+            <SecurityClearanceModal
+                isOpen={!!selectedJob}
+                onClose={() => setSelectedJob(null)}
+                jobTitle={selectedJob || ""}
+            />
             <div className="relative py-24 bg-background">
                 <div className="container mx-auto px-6">
                     <motion.div
@@ -38,7 +46,11 @@ export default function Careers() {
                             <h2 className="text-2xl font-bold mb-8 font-display">Open Positions</h2>
                             <div className="grid gap-4">
                                 {positions.map((pos, i) => (
-                                    <div key={i} className="p-6 rounded-xl bg-card border border-white/5 flex flex-col md:flex-row justify-between items-start md:items-center hover:border-primary/50 transition-colors cursor-pointer group">
+                                    <div
+                                        key={i}
+                                        className="p-6 rounded-xl bg-card border border-white/5 flex flex-col md:flex-row justify-between items-start md:items-center hover:border-primary/50 transition-colors cursor-pointer group"
+                                        onClick={() => setSelectedJob(pos.title)}
+                                    >
                                         <div>
                                             <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{pos.title}</h3>
                                             <div className="flex items-center gap-4 text-sm text-muted-foreground">
@@ -59,7 +71,7 @@ export default function Careers() {
                             <p className="text-muted-foreground mb-6 max-w-lg mx-auto">
                                 We are growing fast. Send us your open application and we will keep you in mind for future opportunities.
                             </p>
-                            <Button className="gap-2">
+                                <Button className="gap-2" onClick={() => setSelectedJob("Open Application")}>
                                 Send Open Application <ArrowRight className="w-4 h-4" />
                             </Button>
                         </div>

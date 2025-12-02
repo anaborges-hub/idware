@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 export default function ParticleBackground() {
   // Static high-tech background with CSS-only subtle animations
   return (
-    <div className="fixed inset-0 z-0 pointer-events-none bg-[#0b1021]">
+    <div className="fixed inset-0 z-0 pointer-events-none bg-background">
       {/* Base Grid */}
       <div 
         className="absolute inset-0 opacity-[0.03]"
