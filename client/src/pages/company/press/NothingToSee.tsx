@@ -56,7 +56,7 @@ export default function NothingToSee() {
                             </motion.div>
                         </div>
 
-                        <h1 className="text-6xl md:text-8xl font-bold font-display mb-6 text-transparent bg-clip-text bg-gradient-to-r from-primary to-amber-200">
+                        <h1 className="text-6xl md:text-8xl font-bold font-display mb-6 text-transparent bg-clip-text bg-primary ">
                             Blah Blah Blah...
                         </h1>
 
