@@ -7,7 +7,7 @@ import LiveMonitor from "@/components/LiveMonitor";
 
 export default function Hero() {
     return (
-        <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <section className="relative min-h-[90vh] flex items-start pt-24 overflow-hidden">
             {/* Background Grid Animation */}
             <div className="absolute inset-0 z-0 pointer-events-none">
                 <div className="absolute inset-0 bg-grid-pattern opacity-[0.03] animate-grid-flow" />
@@ -30,8 +30,8 @@ export default function Hero() {
                     {/* Text Content */}
                     <div className="max-w-3xl flex-1">
                         <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0, x: 20 }}
+                            animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.6 }}
                         >
                             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-mono mb-6">
