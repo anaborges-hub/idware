@@ -1,4 +1,3 @@
-import { Shield } from "lucide-react";
 import { Link } from "wouter";
 import idWareLogo from "@assets/ID-ware Logo (solo) weiss_1763985113528.png";
 

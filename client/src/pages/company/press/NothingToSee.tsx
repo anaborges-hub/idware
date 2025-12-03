@@ -2,18 +2,22 @@ import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Ghost } from "lucide-react";
-import { Link, useLocation } from "wouter";
+import { Link } from "wouter";
 
 export default function NothingToSee() {
     return (
         <Layout>
-            <div className="min-h-screen flex items-center justify-center bg-background overflow-hidden relative">
+            <div className="min-h-screen flex items-start justify-center bg-background overflow-hidden relative pt-24">
                 {/* Background chaotic elements */}
                 <div className="absolute inset-0 pointer-events-none">
                     {[...Array(20)].map((_, i) => (
                         <motion.div
                             key={i}
-                            className="absolute text-primary/10 text-4xl font-bold select-none"
+                            className="absolute text-primary/30 text-4xl font-bold select-none"
+                            style={{
+                                fontSize: Math.random() * 100 + 20 + "px",
+                                opacity: Math.random() * 0.5 + 0.02
+                            }}
                             initial={{
                                 x: Math.random() * window.innerWidth,
                                 y: Math.random() * window.innerHeight,
@@ -29,7 +33,7 @@ export default function NothingToSee() {
                                 ease: "linear"
                             }}
                         >
-                            blah
+                            {["blah", "BLAH", "blah...", "blah blah", "bLaH", "blah?", "blah!", "BLAH BLAH"][Math.floor(Math.random() * 8)]}
                         </motion.div>
                     ))}
                 </div>
@@ -39,7 +43,16 @@ export default function NothingToSee() {
                         initial={{ scale: 0.8, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
                         transition={{ type: "spring", bounce: 0.5 }}
+                        className="max-w-2xl mx-auto flex flex-col items-center"
                     >
+                        <div className="w-full flex justify-start mb-8">
+                            <Link href="/company/press">
+                                <Button variant="ghost" className="pl-0 hover:pl-2 transition-all gap-2">
+                                    <ArrowLeft className="w-4 h-4" /> Go back
+                                </Button>
+                            </Link>
+                        </div>
+
                         <div className="mb-8 flex justify-center">
                             <motion.div
                                 animate={{
@@ -56,7 +69,7 @@ export default function NothingToSee() {
                             </motion.div>
                         </div>
 
-                        <h1 className="text-6xl md:text-8xl font-bold font-display mb-6 text-transparent bg-clip-text bg-primary ">
+                        <h1 className="text-6xl md:text-8xl font-bold font-display mb-6 text-transparent bg-clip-text bg-primary">
                             Blah Blah Blah...
                         </h1>
 
@@ -67,23 +80,9 @@ export default function NothingToSee() {
                         >
                             Nothing to see here!
                         </motion.p>
-
-                        <div className="flex justify-center gap-4">
-                            <BackButton />
-                        </div>
                     </motion.div>
                 </div>
             </div>
         </Layout>
-    );
-}
-
-function BackButton() {
-    const [, navigate] = useLocation();
-    return (
-        <Button size="lg" className="group" onClick={() => navigate("/company/press")}> 
-            <ArrowLeft className="mr-2 h-4 w-4 group-hover:-translate-x-1 transition-transform" />
-            Go Back to Real News
-        </Button>
     );
 }

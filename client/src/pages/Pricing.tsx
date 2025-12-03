@@ -1,8 +1,10 @@
 import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, ArrowRight } from "lucide-react";
+import { CheckCircle2, ArrowRight, ArrowLeft } from "lucide-react";
 import { useState } from "react";
+import { Link } from "wouter";
+
 import {
     Select,
     SelectContent,
@@ -98,6 +100,13 @@ export default function Pricing() {
     return (
         <Layout>
             <div className="container mx-auto px-6 py-12">
+                <div className="w-full flex justify-start mb-8">
+                    <Link href="/products">
+                        <Button variant="ghost" className="pl-0 hover:pl-2 transition-all gap-2">
+                            <ArrowLeft className="w-4 h-4" /> Go back
+                        </Button>
+                    </Link>
+                </div>
                 <div className="max-w-4xl mx-auto text-center mb-16">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}

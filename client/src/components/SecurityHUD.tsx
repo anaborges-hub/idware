@@ -1,5 +1,3 @@
-import { Lock, ShieldCheck, Wifi } from "lucide-react";
-
 export default function SecurityHUD() {
   return (
     <div className="fixed inset-0 z-[100] pointer-events-none overflow-hidden">

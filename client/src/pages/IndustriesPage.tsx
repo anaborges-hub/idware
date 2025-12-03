@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
-import Industries from "@/components/Industries"; // Reusing the component we made earlier
+import Industries from "@/components/Industries"; 
 import { Button } from "@/components/ui/button";
 import RequestDemoDialog from "@/components/RequestDemoDialog";
 

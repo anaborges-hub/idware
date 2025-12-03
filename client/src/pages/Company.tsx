@@ -1,15 +1,16 @@
 import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
-import { Globe, HeartHandshake, Trophy, Shield, CheckCircle2, Briefcase, Cpu, Users } from "lucide-react"; 
+import { Globe, HeartHandshake, Trophy, Shield, CheckCircle2, Briefcase, Cpu, Users, ArrowLeft, ArrowRight as ArrowRightIcon } from "lucide-react";
 import officeImg from "@assets/building.png";
 import ceoImg from "@assets/BD.jpg";
 import ctoImg from "@assets/ZH.jpg";
 import cooImg from "@assets/RH.jpg";
-
+import { useRef } from "react";
+import { Button } from "@/components/ui/button";
 
 export default function Company() {
     const stats = [
-        { label: "Founded", value: "2002" }, // Updated based on >20 years experience
+        { label: "Founded", value: "2002" },
         { label: "Employees", value: "130+" },
         { label: "Experience", value: ">20 Yrs" },
         { label: "Offices", value: "Global" },
@@ -45,7 +46,7 @@ export default function Company() {
         "Increasing security demands.",
         "Increasing regulations, e.g. for critical infrastructure.",
         "Compliance and auditability aspects.",
-        "Reduction of operational costs",
+        "Reduction of operational costs.",
         "Increase of automation."
     ];
 
@@ -183,6 +184,20 @@ export default function Company() {
         }
     ];
 
+    const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+    const scroll = (direction: 'left' | 'right') => {
+        if (scrollContainerRef.current) {
+            const { current } = scrollContainerRef;
+            const scrollAmount = 300;
+            if (direction === 'left') {
+                current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            } else {
+                current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            }
+        }
+    };
+
     return (
         <Layout>
             {/* Hero Section */}
@@ -245,7 +260,7 @@ export default function Company() {
                     ))}
                 </div>
 
-                {/* New Section: Why PIAM? */}
+                {/* Why PIAM? */}
                 <div className="mb-24 max-w-4xl mx-auto">
                     <h2 className="text-3xl font-bold font-display mb-8 text-center">Why PIAM?</h2>
                     <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
@@ -268,7 +283,7 @@ export default function Company() {
                     </div>
                 </div>
 
-                {/* New Section: Services */}
+                {/* Services */}
                 <div className="mb-24">
                     <h2 className="text-3xl font-bold font-display mb-12 text-center">Our Product & Services Range</h2>
                     <div className="grid md:grid-cols-3 gap-8">
@@ -277,8 +292,8 @@ export default function Company() {
                                 key={i}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.3 }}
-                                viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.1 }}
                                 className="p-8 rounded-xl bg-gradient-to-br from-card/50 to-card/30 border border-white/10 text-center"
                             >
                                 <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6 text-primary">
@@ -291,7 +306,7 @@ export default function Company() {
                     </div>
                 </div>
 
-                {/* New Section: Customers */}
+                {/* Customers */}
                 <div className="mb-24">
                     <div className="text-center max-w-3xl mx-auto mb-16">
                         <h2 className="text-3xl font-bold font-display mb-6">Our Customers</h2>
@@ -358,35 +373,67 @@ export default function Company() {
                     </div>
                 </div>
 
-                {/* Company History */}
-                <div className="mb-24 max-w-4xl mx-auto">
-                    <h2 className="text-3xl font-bold font-display mb-12 text-center">Our History</h2>
-                    <div className="relative border-l border-primary/20 ml-6 md:ml-0">
-                        {history.map((item, i) => (
-                            <motion.div
-                                key={i}
-                                initial={{ opacity: 0, x: -20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                transition={{ delay: i * 0.1 }}
-                                viewport={{ once: true }}
-                                className="mb-12 ml-8 md:ml-12 relative"
-                            >
-                                <div className="absolute -left-[41px] md:-left-[57px] h-5 w-5 rounded-full bg-background border-2 border-primary flex items-center justify-center">
-                                    <div className="h-2 w-2 rounded-full bg-primary" />
-                                </div>
-                                <div className="flex flex-col md:flex-row gap-2 md:gap-8 items-start md:items-center mb-2">
-                                    <span className="text-2xl font-bold font-display text-primary">{item.year}</span>
-                                    <h3 className="text-xl font-bold">{item.title}</h3>
-                                </div>
-                                <p className="text-muted-foreground leading-relaxed">{item.description}</p>
-                            </motion.div>
-                        ))}
+                {/* Company History - Horizontal Scroll */}
+                <div className="mb-24">
+                    <h2 className="text-3xl font-bold font-display mb-8 text-center">History & Milestones</h2>
+
+                    <div className="relative max-w-7xl mx-auto">
+                        {/* Navigation Controls */}
+                        <div className="absolute -top-14 right-4 flex gap-2">
+                            <Button variant="outline" size="icon" onClick={() => scroll('left')} className="h-8 w-8 border-primary/20 hover:bg-primary/10">
+                                <ArrowLeft className="h-4 w-4" />
+                            </Button>
+                            <Button variant="outline" size="icon" onClick={() => scroll('right')} className="h-8 w-8 border-primary/20 hover:bg-primary/10">
+                                <ArrowRightIcon className="h-4 w-4" />
+                            </Button>
+                        </div>
+
+                        <div
+                            ref={scrollContainerRef}
+                            className="flex overflow-x-auto pb-8 gap-8 px-4 snap-x scrollbar-hide"
+                            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                        >
+                            {history.map((item, i) => (
+                                <motion.div
+                                    key={i}
+                                    initial={{ opacity: 0, x: 20 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: i * 0.05 }}
+                                    className="snap-center shrink-0 w-[300px] relative group"
+                                >
+                                    <div className="flex flex-col h-full">
+                                        {/* Year at top */}
+                                        <span className="text-5xl font-bold font-display text-white/5 group-hover:text-primary/20 transition-colors duration-300 mb-4">
+                                            {item.year}
+                                        </span>
+
+                                        {/* Timeline Line & Dot */}
+                                        <div className="w-full h-px bg-white/10 mb-6 relative">
+                                            <div className="absolute left-0 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-primary shadow-[0_0_10px_rgba(245,156,0,0.5)]" />
+                                        </div>
+
+                                        {/* Content */}
+                                        <div className="bg-card/20 border border-white/5 p-6 rounded-xl hover:border-primary/30 transition-all duration-300 h-full flex flex-col">
+                                            <h3 className="text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors">
+                                                {item.title}
+                                            </h3>
+                                            <p className="text-sm text-muted-foreground leading-relaxed">
+                                                {item.description}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            ))}
+
+                            {/* Spacer for end of scroll */}
+                            <div className="w-8 shrink-0" />
+                        </div>
                     </div>
                 </div>
 
                 {/* Values */}
                 <div className="mb-12">
-                    {/* <div className="mb-24"> */}
                     <h2 className="text-3xl font-bold font-display mb-12 text-center">Our Core Values</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {values.map((val, i) => (
@@ -413,4 +460,3 @@ export default function Company() {
         </Layout>
     );
 }
-

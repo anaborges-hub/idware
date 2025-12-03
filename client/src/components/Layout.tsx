@@ -2,7 +2,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ParticleBackground from "@/components/ParticleBackground";
 import SecurityHUD from "@/components/SecurityHUD";
-// import CustomCursor from "@/components/CustomCursor";
 import { useEffect } from "react";
 import { useLocation } from "wouter";
 
