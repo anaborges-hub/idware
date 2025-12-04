@@ -29,6 +29,7 @@ function TiltCard({ children, index }: { children: React.ReactNode; index: numbe
   const rotateY = useTransform(x, [-100, 100], [-15, 15]);
   
   function handleMouseMove(event: React.MouseEvent<HTMLDivElement>) {
+      if (window.innerWidth < 768) return;
     const rect = event.currentTarget.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
     const centerY = rect.top + rect.height / 2;
