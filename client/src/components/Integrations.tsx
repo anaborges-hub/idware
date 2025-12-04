@@ -103,7 +103,7 @@ export default function Integrations() {
                                 <div className="relative rounded-2xl bg-gradient-to-r from-primary/10 via-primary/20 to-primary/10 border border-primary/30 p-8 text-center shadow-[0_0_40px_rgba(245,156,0,0.15)]">
                                     <div className="absolute inset-0 bg-primary/5 animate-pulse rounded-2xl" />
                                     <div className="relative z-10 flex items-center justify-center h-full">
-                                        <h3 className="text-3xl font-bold font-display text-foreground">IDware</h3>
+                                        <h3 className="text-3xl font-bold font-display text-foreground">ID-ware</h3>
                                     </div>
                                 </div>
 

@@ -24,7 +24,7 @@ export default function Navbar() {
           <span className="flex items-center gap-2 cursor-pointer group">
             <img 
               src={idWareLogo} 
-              alt="IDware" 
+              alt="ID-ware" 
               className="h-10 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity" 
             />
           </span>
