@@ -86,6 +86,9 @@ export default function Products() {
               <img src={kioskImg} alt="ID-Kiosk" className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-l from-background/80 to-transparent pointer-events-none" />
             </motion.div>
+                      <p className="text-xs text-muted-foreground mt-2 text-right italic opacity-60">
+                          * Image is for reference only and does not represent the actual product.
+                      </p>
           </div>
           <div className="flex-1">
             <h2 className="text-3xl font-bold font-display mb-4 flex items-center gap-3">
@@ -107,7 +110,7 @@ export default function Products() {
                 <div>Aluminium</div>
               </div>
             </div>
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                      <Button className="bg-primary hover:bg-primary/90 text-primary-foreground" onClick={() => navigate("/coming-soon")}>
               View Specs <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </div>
