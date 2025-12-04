@@ -273,7 +273,7 @@ export default function Company() {
                                 initial={{ opacity: 0, x: -10 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: i * 0.1 }}
+                                transition={{ duration: 0.3 }}
                                 className="flex items-start gap-3 p-4 rounded-lg bg-card/30 border border-white/5"
                             >
                                 <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
@@ -293,7 +293,7 @@ export default function Company() {
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: i * 0.1 }}
+                                transition={{ duration: 0.3 }}
                                 className="p-8 rounded-xl bg-gradient-to-br from-card/50 to-card/30 border border-white/10 text-center"
                             >
                                 <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6 text-primary">
@@ -321,7 +321,7 @@ export default function Company() {
                                 initial={{ opacity: 0, scale: 0.95 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: i * 0.05 }}
+                                transition={{ duration: 0.3 }}
                                 className="p-6 rounded-xl bg-card/30 border border-white/5 hover:border-primary/30 transition-colors"
                             >
                                 <div className="flex items-start gap-4">
@@ -352,7 +352,7 @@ export default function Company() {
                                 key={i}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ delay: i * 0.1 }}
+                                transition={{ duration: 0.3 }}
                                 viewport={{ once: true }}
                                 className="group flex flex-col items-center text-center p-8 rounded-xl bg-card/30 border border-white/5 hover:bg-white/5 transition-colors"
                             >
@@ -373,13 +373,13 @@ export default function Company() {
                     </div>
                 </div>
 
-                {/* Company History - Horizontal Scroll */}
+                {/* Company History */}
                 <div className="mb-24">
                     <h2 className="text-3xl font-bold font-display mb-8 text-center">History & Milestones</h2>
 
                     <div className="relative max-w-7xl mx-auto">
-                        {/* Navigation Controls */}
-                        <div className="absolute -top-14 right-4 flex gap-2">
+                        {/* Navigation Controls - Desktop Only */}
+                        <div className="absolute -top-14 right-4 hidden md:flex gap-2">
                             <Button variant="outline" size="icon" onClick={() => scroll('left')} className="h-8 w-8 border-primary/20 hover:bg-primary/10">
                                 <ArrowLeft className="h-4 w-4" />
                             </Button>
@@ -388,9 +388,39 @@ export default function Company() {
                             </Button>
                         </div>
 
+                        {/* Mobile Vertical Timeline */}
+                        <div className="flex flex-col gap-8 md:hidden px-4 relative">
+                            {/* Vertical Line */}
+                            <div className="absolute left-[31px] top-4 bottom-4 w-px bg-white/10" />
+
+                            {history.map((item, i) => (
+                                <motion.div
+                                    key={`mobile-${i}`}
+                                    initial={{ opacity: 0, x: -20 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.3 }}
+                                    className="relative pl-12"
+                                >
+                                    {/* Dot */}
+                                    <div className="absolute left-[26px] top-3 w-3 h-3 rounded-full bg-primary shadow-[0_0_10px_rgba(245,156,0,0.5)] z-10 ring-4 ring-background" />
+
+                                    {/* Content */}
+                                    <div className="flex flex-col">
+                                        <span className="text-3xl font-bold font-display text-primary mb-2">{item.year}</span>
+                                        <div className="bg-card/20 border border-white/5 p-6 rounded-xl hover:border-primary/30 transition-colors">
+                                            <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
+                                            <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </div>
+
+                        {/* Desktop Horizontal Scroll Timeline */}
                         <div
                             ref={scrollContainerRef}
-                            className="flex overflow-x-auto pb-8 gap-8 px-4 snap-x scrollbar-hide"
+                            className="hidden md:flex overflow-x-auto pb-8 gap-8 px-4 snap-x scrollbar-hide"
                             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                         >
                             {history.map((item, i) => (
@@ -399,7 +429,7 @@ export default function Company() {
                                     initial={{ opacity: 0, x: 20 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true }}
-                                    transition={{ delay: i * 0.05 }}
+                                    transition={{ duration: 0.3 }}
                                     className="snap-center shrink-0 w-[300px] relative group"
                                 >
                                     <div className="flex flex-col h-full">
@@ -441,7 +471,7 @@ export default function Company() {
                                 key={i}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ delay: i * 0.1 }}
+                                transition={{ duration: 0.3 }}
                                 viewport={{ once: true }}
                                 className="flex gap-6 p-6 rounded-xl border border-white/5 hover:bg-white/5 transition-colors"
                             >
