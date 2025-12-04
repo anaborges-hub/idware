@@ -40,7 +40,7 @@ export default function ComingSoon() {
                     </div>
 
                     <h1 className="text-4xl md:text-6xl font-bold font-display mb-6">
-                        Access <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-amber-200">Restricted</span> // Development Zone
+                        Access <span className="text-transparent bg-clip-text bg-primary">Restricted</span> // Development Zone
                     </h1>
 
                     <p className="text-xl text-muted-foreground mb-12 max-w-lg mx-auto">
