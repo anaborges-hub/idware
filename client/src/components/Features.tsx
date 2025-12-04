@@ -1,8 +1,8 @@
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { motion, useMotionValue, useTransform } from "framer-motion";
-import credImg from "@assets/generated_images/3d_smart_id_card_with_holographic_security_layers.png";
-import accessImg from "@assets/generated_images/abstract_visualization_of_secure_physical_access_control.png";
-import integrationImg from "@assets/generated_images/enterprise_software_integration_network_diagram.png";
+import credImg from "@assets/generated_images/3d_smart_id_card_with_holographic_security_layers.webp";
+import accessImg from "@assets/generated_images/abstract_visualization_of_secure_physical_access_control.webp";
+import integrationImg from "@assets/generated_images/enterprise_software_integration_network_diagram.webp";
 
 const features = [
   {

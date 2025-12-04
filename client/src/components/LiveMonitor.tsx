@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { Shield, UserCheck, FileCheck, CreditCard, RefreshCw, Printer, MapPin, Users, Activity } from "lucide-react";
-import smartCard from "@assets/generated_images/smart_card_visualization.png";
-import accessMap from "@assets/generated_images/holographic_world_map_data.png";
+import smartCard from "@assets/generated_images/smart_card_visualization.webp";
+import accessMap from "@assets/generated_images/holographic_world_map_data.webp";
 
 interface LogEntry {
     id: number;

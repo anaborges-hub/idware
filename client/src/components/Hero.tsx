@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
-import heroBg from "@assets/generated_images/abstract_digital_security_network_background.png";
+import heroBg from "@assets/generated_images/abstract_digital_security_network_background.webp";
 import RequestDemoDialog from "@/components/RequestDemoDialog";
 import LiveMonitor from "@/components/LiveMonitor";
 

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { HardHat, Hammer, Construction, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import builderImg from "@assets/generated_images/under_construction_builder.png";
+import builderImg from "@assets/generated_images/under_construction_builder.webp";
 
 export default function ComingSoon() {
     return (

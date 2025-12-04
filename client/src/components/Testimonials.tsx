@@ -1,5 +1,5 @@
 import { Quote } from "lucide-react";
-import directorImg from "@assets/generated_images/professional_headshot_of_a_corporate_security_director.png";
+import directorImg from "@assets/generated_images/professional_headshot_of_a_corporate_security_director.webp";
 
 export default function Testimonials() {
   return (

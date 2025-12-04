@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useLocation } from "wouter";
-import dashboardImg from "@assets/generated_images/image.png";
-import kioskImg from "@assets/generated_images/high_tech_biometric_scanning_kiosk_3d_render.png";
+import dashboardImg from "@assets/generated_images/image.webp";
+import kioskImg from "@assets/generated_images/high_tech_biometric_scanning_kiosk_3d_render.webp";
 
 export default function Products() {
   const [, navigate] = useLocation();

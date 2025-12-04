@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { CheckCircle2, Server, Shield, Users, CreditCard } from "lucide-react";
-import solutionsHero from "@assets/generated_images/physical_security_solutions_hero.png";
+import solutionsHero from "@assets/generated_images/physical_security_solutions_hero.webp";
 
 export default function Solutions() {
   const solutions = [

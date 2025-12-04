@@ -1,10 +1,10 @@
 import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
 import { Globe, HeartHandshake, Trophy, Shield, CheckCircle2, Briefcase, Cpu, Users, ArrowLeft, ArrowRight as ArrowRightIcon } from "lucide-react";
-import officeImg from "@assets/building.png";
-import ceoImg from "@assets/BD.jpg";
-import ctoImg from "@assets/ZH.jpg";
-import cooImg from "@assets/RH.jpg";
+import officeImg from "@assets/building.webp";
+import ceoImg from "@assets/BD.webp";
+import ctoImg from "@assets/ZH.webp";
+import cooImg from "@assets/RH.webp";
 import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 
